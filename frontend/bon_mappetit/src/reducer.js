@@ -14,7 +14,6 @@ export default function reducer(state = initialState, action) {
 
   switch (action.type) {
     case 'NAVIGATION_CLICK':
-    console.log(state.currentPage)  //now need to re-render page.  need to actually navigate to the url
       return {...state, currentPage: action.currentPage}
     default: return state;
   }

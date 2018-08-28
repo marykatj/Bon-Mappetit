@@ -45,11 +45,6 @@ class NavBar extends Component {
   }
 }
 
-// <span style="padding-right:3px; padding-top: 3px; display:inline-block;">
-//
-// <img class="manImg" src="images/ico_mandatory.gif"></img>
-//
-// </span>
 ////////////////////////////////////////////////////////////////////////////////
 
 function mapStateToProps(state) {
