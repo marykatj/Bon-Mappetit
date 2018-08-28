@@ -17,16 +17,13 @@ class App extends Component {
 
 //////////////////////////////////////////////////////////////////////////////
  currentPage = () => {
-   console.log(this)
-   switch(this.props.currentPage) {   //pass state.currentPage here.  Need to get props.
+   console.log(this.props.store.getState().currentPage)
+   switch(this.props.store.getState().currentPage) {   //pass state.currentPage here.  Need to get props.  Need to pass down store props.
      case 'profile':
-     console.log("profile")
        return <UserPage />;
      case 'create':
-      console.log("create")
        return <CreatePage />;
      case 'explore':
-      console.log("explore")
        return <ExplorePage />;
    }
 }
@@ -41,8 +38,12 @@ class App extends Component {
         {this.currentPage()}
         <Switch>
           <Route path='/' component={ ExplorePage } />
-          <Route path='/profile' component={ UserPage } />
-          <Route path='/create' component={ CreatePage } />
+          <Route path='/profile' render={ (routerProps) => (
+            <UserPage {...routerProps}/>
+          )} />
+          <Route path='/create' render={ (routerProps) => (
+            <CreatePage {...routerProps}/>
+          )} />
         </Switch>
       </div>
     );
