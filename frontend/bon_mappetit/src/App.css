@@ -1,0 +1,34 @@
+.App-header {
+  text-align: center;
+  background-image: url('./images/Coffee.jpg');
+  background-repeat: no-repeat;
+  font-family: Bradley Hand, cursive;
+  height: 200px;
+}
+
+.App-title {
+  padding-top: 20px;
+  color: #6433E9;
+  font-size: 1.5em;
+}
+
+.App-slogan {
+  font-size: large;
+  color: #6433E9;
+  padding-top: 40px;
+}
+
+.Header-image {
+  background-image: url("./images/Coffee.jpg");
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  transform: rotate(90deg);
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+.App-body {
+  background: no-repeat grey;
+  font-family: Bradley Hand, cursive;
+}
