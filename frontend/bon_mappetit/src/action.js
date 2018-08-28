@@ -1,7 +1,18 @@
 import { NAVIGATION_CLICK, POST_SUBMIT, FETCHED_MAPS } from './types'
 
-export function changePageAction(page) {
-  return { type: 'NAVIGATION_CLICK', currentPage: page}
+export function changePageAction(urlPath) {
+  if (urlPath.includes('/profile')) {
+    let page = 'profile'
+    return { type: 'NAVIGATION_CLICK', currentPage: page}
+    }
+  else if (urlPath.includes('/create')) {
+      let page = 'create'
+      return { type: 'NAVIGATION_CLICK', currentPage: page}
+    }
+  else if (urlPath.includes('/')) {
+        let page = 'explore'
+        return { type: 'NAVIGATION_CLICK', currentPage: page}
+    }
 }
 
 // export function fetchMapsAction() {

@@ -9,33 +9,55 @@ import ExplorePage from './components/Explore/ExplorePage';
 // const API_URL = `...`
 // const PROXY_URL = `...`
 
-const profile = () => <UserPage />;
-const create = () => <CreatePage />;
-const explore = () => <ExplorePage />;
-
 class App extends Component {
 
 //API FETCH HERE
 //adaptor optional
-
 //MapAdapter.getMaps().then(url => this.props.fetchMaps(url))
 
+//////////////////////////////////////////////////////////////////////////////
+ currentPage = () => {
+   console.log(this)
+   switch(this.props.currentPage) {   //pass state.currentPage here.  Need to get props.
+     case 'profile':
+     console.log("profile")
+       return <UserPage />;
+     case 'create':
+      console.log("create")
+       return <CreatePage />;
+     case 'explore':
+      console.log("explore")
+       return <ExplorePage />;
+   }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////
 
   render() {
     return (
       <div>
         <NavBar />
-          <Switch>
-            <Route path='/' component={explore} />
-            <Route path='/profile' component={profile} />
-            <Route path='/create' component={create} />
-          </Switch>
+        {this.currentPage()}
+        <Switch>
+          <Route path='/' component={ ExplorePage } />
+          <Route path='/profile' component={ UserPage } />
+          <Route path='/create' component={ CreatePage } />
+        </Switch>
       </div>
     );
   }
 }
 
 export default App;
+
+//////////////////////////////////////////////////////////////////////////////
+
+function mapStateToProps(state) {
+  return {
+    currentPage: state.currentPage
+  }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
