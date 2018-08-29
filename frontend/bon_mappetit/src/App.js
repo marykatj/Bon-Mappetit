@@ -5,7 +5,6 @@ import { Switch, Route } from 'react-router-dom';
 import UserPage from './components/Profile/UserPage';
 import CreatePage from './components/Create/CreatePage';
 import ExplorePage from './components/Explore/ExplorePage';
-import GoogleMap from './components/GoogleMap'
 
 
 // const API_URL = `...`
@@ -41,11 +40,11 @@ export default App;
 
 //////////////////////////////////////////////////////////////////////////////
 
-function mapStateToProps(state) {
-  return {
-    currentPage: state.currentPage
-  }
-}
+// function mapStateToProps(state) {
+//   return {
+//     currentPage: state.currentPage
+//   }
+// }
 
 ////////////////////////////////////////////////////////////////////////////
 

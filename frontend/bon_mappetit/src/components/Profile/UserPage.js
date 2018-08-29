@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import UserInfo from './UserInfo';
 import UserPosts from './UserPosts';
 import UserMap from './UserMap';
-import UserSearch from './UserSearch';
+
 
 class UserPage extends Component {
 
@@ -10,8 +10,8 @@ class UserPage extends Component {
     return (
         <div>
           <UserInfo />
-          <UserMap />
           <UserPosts />
+          <UserMap />
         </div>
     );
   }

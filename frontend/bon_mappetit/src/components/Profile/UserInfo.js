@@ -6,7 +6,7 @@ class UserInfo extends Component {
   render() {
     return (
         <div>
-          <img src="" />
+          <img src="" alt=""/>
           <h2> Welcome, Friend! </h2>
           <UserSearch />
           <h3> Location </h3>

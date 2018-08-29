@@ -6,10 +6,6 @@ import { changePageAction } from '../action'
 import '../App.css';
 import '../index.css'
 
-import UserPage from './Profile/UserPage';
-import CreatePage from './Create/CreatePage';
-import ExplorePage from './Explore/ExplorePage';
-
 const linkStyle = {
     width: '200px',
     padding: '12px',
@@ -29,7 +25,7 @@ class NavBar extends Component {
     return (
       <div className="App-header">
         <header >
-          <img className="Header-image"/>
+          <img className="Header-image" alt=""/>
             <h1 className="App-title">Bon Mappétit</h1>
               <p className="App-slogan">
                 indulge a little.

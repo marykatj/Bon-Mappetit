@@ -8,7 +8,7 @@ class Posts extends Component {
           <div className="card">
 
             <div>
-              <img className="card-image-left" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt="Card image cap"/>
+              <img className="card-image-left" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt=""/>
               <a>
                 <div></div>
               </a>
@@ -24,7 +24,7 @@ class Posts extends Component {
           <div className="card">
 
             <div>
-              <img className="card-image-left" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt="Card image cap"/>
+              <img className="card-image-left" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt=""/>
               <a>
                 <div></div>
               </a>
@@ -40,7 +40,7 @@ class Posts extends Component {
           <div className="card">
 
             <div>
-              <img className="card-image-left" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt="Card image cap"/>
+              <img className="card-image-left" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt=""/>
               <a>
                 <div></div>
               </a>

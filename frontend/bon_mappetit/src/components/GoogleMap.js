@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
+const mapStyle = {
+  float: "left",
+  width: "50vw",
+  height: "89.5vh",
+}
+
 export class GoogleMap extends Component {
 
   state = {
@@ -10,11 +16,6 @@ export class GoogleMap extends Component {
 ////////////////////////////////////////////////////////////////////////////////
 
   render() {
-    const mapStyle = {
-      float: "left",
-      width: "50vw",
-      height: "89.5vh",
-    }
     return (
       <Map google={this.props.google} zoom={14} className="user-map" style={mapStyle}>
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMap from '../GoogleMap'
 
+
 class ExploreMap extends Component {
 
   render() {

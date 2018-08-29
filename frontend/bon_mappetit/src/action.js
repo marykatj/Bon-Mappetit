@@ -1,4 +1,4 @@
-import { NAVIGATION_CLICK, POST_SUBMIT, FETCHED_MAPS } from './types'
+import { NAVIGATION_CLICK, SHARE } from './types'
 
 export function changePageAction(urlPath) {
   if (urlPath.includes('/profile')) {

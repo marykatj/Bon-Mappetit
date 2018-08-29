@@ -1,3 +1,2 @@
 export const NAVIGATION_CLICK = 'NAVIGATION_CLICK';
-export const POST_SUBMIT = 'POST_SUBMIT';
-export const FETCHED_MAPS = 'FETCHED_MAPS';
+export const SHARE = 'SHARE';

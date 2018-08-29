@@ -54,7 +54,7 @@
      background: #555;
  }
 
-/*//////////////////////////////////////////////////////////////////////////*/
+/*////PROFILE////////////////////////////////////////////////////////////////*/
 
 .User-posts-container {
   float: right;
@@ -97,4 +97,14 @@
   background-color: #D3D3D3;
   height: 250px;
   width: 225px;
+}
+
+/*///EXPLORE PAGE///////////////////////////////////////////////////////////////////*/
+
+.Post-form {
+  float: right;
+  width: 630px;
+  height: 650px;
+  background-color: #666699;
+  text-align: center;
 }
