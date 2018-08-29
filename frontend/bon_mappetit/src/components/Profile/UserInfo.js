@@ -15,3 +15,6 @@ class UserInfo extends Component {
 }
 
 export default UserInfo;
+
+//add in avatar picture
+// https://github.com/mosch/react-avatar-editor
