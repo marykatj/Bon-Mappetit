@@ -32,17 +32,69 @@
   font-family: Bradley Hand, cursive;
 }
 
+/*////SCROLL BAR///////////////////////////////////////////////////////////////////////*/
+
+ /* width */
+ ::-webkit-scrollbar {
+     width: 10px;
+ }
+
+ /* Track */
+ ::-webkit-scrollbar-track {
+     background: #f1f1f1;
+ }
+
+ /* Handle */
+ ::-webkit-scrollbar-thumb {
+     background: #A9A9A9;
+ }
+
+ /* Handle on hover */
+ ::-webkit-scrollbar-thumb:hover {
+     background: #555;
+ }
+
 /*//////////////////////////////////////////////////////////////////////////*/
 
 .User-posts-container {
   float: right;
-  width: 625px;
-  height: 510px;
+  width: 630px;
+  height: 650px;
   background-color: #666699;
   text-align: center;
-
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .user-posts {
   float: center;
+}
+
+.User-search {
+  float: right;
+  width: 100px;
+  height: 20px;
+  padding-right: 250px;
+
+}
+
+/*/////POST CARDS///////////////////////////////////////////////////////////////////////*/
+
+.card {
+  width: 625px;
+  height: 200px;
+  padding-bottom: 75px;
+  }
+
+.card-image-left {
+  float: left;
+  height: 250px;
+  width: 400px;
+}
+
+.card-body {
+  float: right;
+  background-color: #D3D3D3;
+  height: 250px;
+  width: 225px;
 }

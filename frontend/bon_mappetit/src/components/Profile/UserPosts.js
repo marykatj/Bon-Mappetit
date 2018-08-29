@@ -6,7 +6,7 @@ class UserPosts extends Component {
   render() {
     return (
         <div className="User-posts-container">
-          <h1> User Posts </h1>
+          <h3> My food </h3>
           <Posts />
         </div>
     );

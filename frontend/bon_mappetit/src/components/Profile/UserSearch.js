@@ -4,7 +4,7 @@ class UserSearch extends Component {
 
     render() {
       return (
-        <div>
+        <div className="User-search">
           <form id="search-form">
             <input id="search-bar" type='input' placeholder='Find your places...' />
       </form>

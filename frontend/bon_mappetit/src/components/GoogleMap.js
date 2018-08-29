@@ -13,7 +13,7 @@ export class GoogleMap extends Component {
     const mapStyle = {
       float: "left",
       width: "50vw",
-      height: "70vh",
+      height: "89.5vh",
     }
     return (
       <Map google={this.props.google} zoom={14} className="user-map" style={mapStyle}>

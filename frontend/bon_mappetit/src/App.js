@@ -58,10 +58,10 @@ function mapStateToProps(state) {
 
 
 // <App />
-//   <NavBar />                                                                  ----DONE
+//   <NavBar />                                          ----DONE
 //   <LoggedInUser />
 //   <NavBar />
-//   		Routes: Profile, Explore(Home … geolocation map), Create, Logout          ---- DONE
+//   		Routes: Profile, Explore, Create, Logout          ---- DONE
 //
 //   <UserProfile />
 //             <UserInfo />

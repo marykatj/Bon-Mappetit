@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import UserSearch from './UserSearch';
 
 class UserInfo extends Component {
 
@@ -7,6 +8,7 @@ class UserInfo extends Component {
         <div>
           <img src="" />
           <h2> Welcome, Friend! </h2>
+          <UserSearch />
           <h3> Location </h3>
         </div>
     );

@@ -12,7 +12,6 @@ class UserPage extends Component {
           <UserInfo />
           <UserMap />
           <UserPosts />
-          <UserSearch />
         </div>
     );
   }
