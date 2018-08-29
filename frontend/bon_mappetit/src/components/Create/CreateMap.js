@@ -5,7 +5,7 @@ class CreateMap extends Component {
 
   render() {
     return (
-        <div>
+        <div id='mapContainer'>
           <GoogleMap google={this.props.google}/>
         </div>
     );

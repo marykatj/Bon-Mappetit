@@ -15,6 +15,10 @@ export function changePageAction(urlPath) {
     }
 }
 
+export function createPostAction(post) {
+  return { type: 'SHARE', newPost: post}
+  }
+
 // export function fetchMapsAction() {
 //   AnimalAdapter.getMaps()
 //      .then(url => {

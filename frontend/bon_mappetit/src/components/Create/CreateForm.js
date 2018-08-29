@@ -1,37 +1,78 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { createPostAction } from '../../action';
+import { NavLink } from 'react-router-dom';
 
 class CreateForm extends Component {
 
+  state = {
+    location: '',
+    description: ''     // include photo: ''
+  }
+
   render() {
     return (
-        <div className='Post-form'>
-          <h2> Find a new spot? </h2>
-          <form className="description" onSubmit={this.saveAction} >
-            <input type="text" name="location" value={this.props.location} onChange={this.inputChange}/>
-            <textarea name="description" value={this.props.description} onChange={this.inputChange}/>
-            <div className="button-row">
-            <button type="button" onClick={this.uploadPhoto}>Upload</button>
-              <input className="button" type="submit" value="Share"/>
-            </div>
-          </form>
+      <div>
+      <form onSubmit={this.handleSubmit} >
+        <input type="text" id="location" value={this.state.location} onChange={this.inputChange}/>
+        <textarea id="description" value={this.state.description} onChange={this.inputChange}/>
+        <div className="button-row">
+              <NavLink onClick={this.handleSubmit} className="button" to="/"> Share </NavLink>
         </div>
+      </form>
+     </div>
     );
   }
 
-  ////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
-  saveAction = () => {
-    console.log("submit button")
-  }
-
-  inputChange = () => {
-    console.log("input change")
-  }
-
-  uploadPhoto = () => {
-    console.log("photo upload")
-  }
-
+inputChange = (event) => {
+  this.setState({
+      [event.target.id]: event.target.value
+  })
 }
 
-export default CreateForm;
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.createPost(this.state)
+    this.setState({
+        location: '',
+        description: ''     // include photo: ''
+    })
+  }
+
+  // uploadPhoto = () => {
+  //
+  // }
+  //   <button className="button" type="button" onClick={this.uploadPhoto}> Upload </button>
+
+
+};
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+function mapStateToProps(state) {
+  return {
+    allUserLocations: state.allUserLocations,
+    allPlaces: state.allPlaces,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    createPost: (post) => dispatch(createPostAction(post)),
+    dispatch
+  }
+  }
+
+////////////////////////////////////////////////////////////////////////////
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateForm);
+
+
+//to create a post, need an image, description and location tag
+//where do I create the post? in this container? reference MemeWars
+// submit button, trigger a Nav link to profile page
+//put the buttons into a span
+// create the actual post, to push up to the reducer

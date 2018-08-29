@@ -3,9 +3,10 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 const mapStyle = {
   float: "left",
-  width: "50vw",
+  width: "50vw",    //100% ...overtaking it's container?
   height: "89.5vh",
 }
+
 
 export class GoogleMap extends Component {
 
@@ -17,7 +18,7 @@ export class GoogleMap extends Component {
 
   render() {
     return (
-      <Map google={this.props.google} zoom={14} className="user-map" style={mapStyle}>
+      <Map google={this.props.google} zoom={14} style={mapStyle}>
 
               <Marker onClick={this.onMarkerClick}
                       name={'Current location'} />

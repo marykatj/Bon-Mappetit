@@ -5,7 +5,7 @@ class Posts extends Component {
   render() {
     return (
       <div>
-          <div className="card">
+          <div id="card">
 
             <div>
               <img className="card-image-left" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt=""/>
@@ -15,44 +15,11 @@ class Posts extends Component {
             </div>
 
             <div className="card-body">
-              <h4 className="card-title"><strong>Location</strong></h4>
-              <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi sunt, quod quibusdam.
+              <h4 className="card-title"><strong>{this.props.post.location}</strong></h4>
+              <p className="card-text">{this.props.post.description}
               </p>
             </div>
           </div>
-
-          <div className="card">
-
-            <div>
-              <img className="card-image-left" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt=""/>
-              <a>
-                <div></div>
-              </a>
-            </div>
-
-            <div className="card-body">
-              <h4 className="card-title"><strong>Location</strong></h4>
-              <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi sunt, quod quibusdam.
-              </p>
-            </div>
-          </div>
-
-          <div className="card">
-
-            <div>
-              <img className="card-image-left" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt=""/>
-              <a>
-                <div></div>
-              </a>
-            </div>
-
-            <div className="card-body">
-              <h4 className="card-title"><strong>Location</strong></h4>
-              <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi sunt, quod quibusdam.
-              </p>
-            </div>
-          </div>
-
       </div>
     );
   }

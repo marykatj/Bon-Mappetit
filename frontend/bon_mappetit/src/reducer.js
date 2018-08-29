@@ -17,18 +17,11 @@ export default function reducer(state = initialState, action) {
       return {...state, currentPage: action.currentPage}
     case 'SHARE':
       let userPostArray = initialState.allUserLocations
-      userPostArray.push(action.newLocation)
+      userPostArray.push(action.newPost)
       let allPostsArray = initialState.allPlaces
-      allPostsArray.push(action.newLocation)
-      return (
-        {...state, allUserLocations: userPostArray},
-        {...state, allPlaces: allPostsArray}
-      )
+      allPostsArray.push(action.newPost)
+      return {...state, allUserLocations: userPostArray, allPlaces: allPostsArray}
     default: return state;
   }
 
 }
-
-//need to map state to mapStateToProps
-// get the input bars working & buttons working
-//
