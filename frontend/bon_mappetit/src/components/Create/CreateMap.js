@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import GoogleMap from '../GoogleMap'
 
 class CreateMap extends Component {
 
   render() {
     return (
         <div>
-          <h1> Map </h1>
+          <GoogleMap google={this.props.google}/>
         </div>
     );
   }

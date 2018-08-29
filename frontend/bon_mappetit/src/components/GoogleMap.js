@@ -10,8 +10,13 @@ export class GoogleMap extends Component {
 ////////////////////////////////////////////////////////////////////////////////
 
   render() {
+    const mapStyle = {
+      float: "left",
+      width: "50vw",
+      height: "70vh",
+    }
     return (
-      <Map google={this.props.google} zoom={14}>
+      <Map google={this.props.google} zoom={14} className="user-map" style={mapStyle}>
 
               <Marker onClick={this.onMarkerClick}
                       name={'Current location'} />
@@ -29,3 +34,6 @@ export class GoogleMap extends Component {
 export default GoogleApiWrapper({
   apiKey: ('AIzaSyD8eyGeIVO1m-lMAwJ21o3qiUPRiuFV_ck')
 })(GoogleMap);
+
+
+//set defaultCenter={{ lat: -34.397, lng: 150.644 }} === browserLocation

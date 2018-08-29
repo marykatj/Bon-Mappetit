@@ -8,8 +8,7 @@ class UserPage extends Component {
 
   render() {
     return (
-        <div className='App-body'>
-          <h1> profile page! </h1>
+        <div>
           <UserInfo />
           <UserMap />
           <UserPosts />

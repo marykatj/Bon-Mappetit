@@ -5,7 +5,9 @@ class UserInfo extends Component {
   render() {
     return (
         <div>
-          <h1> User Information </h1>
+          <img src="" />
+          <h2> Welcome, Friend! </h2>
+          <h3> Location </h3>
         </div>
     );
   }

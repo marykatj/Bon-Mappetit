@@ -23,7 +23,6 @@ class App extends Component {
     return (
       <div>
         <NavBar />
-        <GoogleMap google={this.props.google} />
         <Switch>
           <Route path='/profile' render={ () => (
             <UserPage />
@@ -59,15 +58,16 @@ function mapStateToProps(state) {
 
 
 // <App />
-//   <NavBar />
+//   <NavBar />                                                                  ----DONE
 //   <LoggedInUser />
 //   <NavBar />
-//   		Routes: Profile, Explore(Home … geolocation map), Create, Logout
+//   		Routes: Profile, Explore(Home … geolocation map), Create, Logout          ---- DONE
 //
 //   <UserProfile />
 //             <UserInfo />
 //   	         <UserMap />
 //             <UserPosts />
+//                  <Post />
 //            <UserSearch />
 //
 //   <Create />

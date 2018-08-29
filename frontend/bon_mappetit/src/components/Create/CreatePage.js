@@ -7,7 +7,7 @@ class CreatePage extends Component {
 
   render() {
     return (
-        <div className='App-body'>
+        <div>
           <h1> create page! </h1>
           <CreateMap />
           <CreateForm />
