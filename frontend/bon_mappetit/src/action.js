@@ -1,4 +1,4 @@
-import { NAVIGATION_CLICK, SHARE } from './types'
+import { NAVIGATION_CLICK, SHARE, USER_SEARCH, CREATE_SEARCH, EXPLORE_SEARCH } from './types'
 
 export function changePageAction(urlPath) {
   if (urlPath.includes('/profile')) {
@@ -18,6 +18,18 @@ export function changePageAction(urlPath) {
 export function createPostAction(post) {
   return { type: 'SHARE', newPost: post}
   }
+
+  export function userSearchAction(term) {
+    return { type: 'USER_SEARCH', term: term}
+    }
+
+    export function createSearchAction(term) {
+      return { type: 'CREATE_SEARCH', term: term}
+      }
+
+      export function exploreSearchAction(term) {
+        return { type: 'EXPLORE_SEARCH', term: term}
+        }
 
 // export function fetchMapsAction() {
 //   AnimalAdapter.getMaps()

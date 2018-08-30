@@ -52,7 +52,7 @@ inputChange = (event) => {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-function mapStateToProps(state) {
+function mapStateToProps(state) {             //totally needed????
   return {
     allUserLocations: state.allUserLocations,
     allPlaces: state.allPlaces,

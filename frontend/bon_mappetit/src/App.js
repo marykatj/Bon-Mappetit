@@ -45,6 +45,17 @@ export default App;
 //<NavBar {/*handleClick={this.handleClick}*/} />
 //import UUID from 'uuid'
 
+
+// NOTES: Create & Explore search bars are functional to state.  Need to insert this into relevant Component
+
+// function mapStateToProps(state) {
+//   return {
+//     createSearch: state.createSearch,
+//   }
+// } && export default connect(mapStateToProps, mapDispatchToProps)(CreateSearch)
+//
+// && need to run a check = () => filter function over the term versus the state. 
+
 //Structure///////////////////////////////////////////////////////////////////
 
 

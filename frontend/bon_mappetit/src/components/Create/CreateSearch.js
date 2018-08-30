@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import { createSearchAction } from '../../action'
 
 class CreateSearch extends Component {
 
+  handleChange = (event) => {
+    this.props.createSearch(event.target.value)
+  }
+
     render() {
       return (
-        <div>
+        <div className="Create-search">
           <form id="search-form">
             <input id="search-bar" type='input' placeholder='Where are you?' />
       </form>
@@ -14,8 +20,20 @@ class CreateSearch extends Component {
 
 }
 
-export default CreateSearch;
+//////////////////////////////////////////////////////////////////////////////////
 
-// form      onSubmit={(event)=>{event.preventDefault(); props.beginSearch()}}
-// onChange={(event)=>props.changeSearch(event.target.value)}
-// value={props.searchValue}
+function mapStateToProps(state) {             //totally needed????
+  return {
+    createSearch: state.createSearch,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    createSearch: (term) => dispatch(createSearchAction(term)),
+    dispatch
+  }
+  }
+/////////////////////////////////////////////////////////////////////////////////
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateSearch);

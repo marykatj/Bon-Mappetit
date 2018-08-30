@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { userSearchAction } from '../../action'
 
 class UserSearch extends Component {
+
+handleChange = (event) => {
+  this.props.userSearch(event.target.value)
+}
 
     render() {
       return (
         <div className="User-search">
           <form id="search-form">
-            <input id="search-bar" type='input' placeholder='Find your places...' />
+            <input id="search-bar" type='input' placeholder='Find your places...' value={this.props.search} onChange={this.handleChange}/>
       </form>
     </div>
       )
@@ -14,8 +20,20 @@ class UserSearch extends Component {
 
 }
 
-export default UserSearch;
+//////////////////////////////////////////////////////////////////////////////////
 
-// form      onSubmit={(event)=>{event.preventDefault(); props.beginSearch()}}
-// onChange={(event)=>props.changeSearch(event.target.value)}
-// value={props.searchValue}
+function mapStateToProps(state) {             //totally needed????
+  return {
+    userSearch: state.userSearch,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    userSearch: (term) => dispatch(userSearchAction(term)),
+    dispatch
+  }
+  }
+/////////////////////////////////////////////////////////////////////////////////
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserSearch);

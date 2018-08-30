@@ -1,2 +1,5 @@
 export const NAVIGATION_CLICK = 'NAVIGATION_CLICK';
 export const SHARE = 'SHARE';
+export const USER_SEARCH = 'USER_SEARCH';
+export const CREATE_SEARCH = 'CREATE_SEARCH';
+export const EXPLORE_SEARCH = 'EXPLORE_SEARCH';
