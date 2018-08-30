@@ -54,7 +54,9 @@ export default App;
 //   }
 // } && export default connect(mapStateToProps, mapDispatchToProps)(CreateSearch)
 //
-// && need to run a check = () => filter function over the term versus the state. 
+// && need to run a check = () => filter function over the term versus the state.
+
+// font-family: Apple Chancery, cursive; 
 
 //Structure///////////////////////////////////////////////////////////////////
 

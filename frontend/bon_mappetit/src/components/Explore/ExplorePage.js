@@ -6,8 +6,8 @@ class ExplorePage extends Component {
 
   render() {
     return (
-        <div>
-          <h1> explore page! </h1>
+        <div id='exploreContainer'>
+          <h1 id='exploreHeader'> discover. </h1>
           <ExploreMap />
           <ExploreSearch />
         </div>

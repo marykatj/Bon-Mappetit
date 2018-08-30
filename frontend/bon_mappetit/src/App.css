@@ -2,7 +2,6 @@
   text-align: center;
   background-image: url('./images/Coffee.jpg');
   background-repeat: no-repeat;
-  font-family: Bradley Hand, cursive;
   height: 250px;
 }
 
@@ -28,8 +27,15 @@
 
 /*//////////////////////////////////////////////////////////////////////////*/
 
-.App-body {
+/* .App-body {
   font-family: Bradley Hand, cursive;
+} */
+
+.button {
+  width: 200px;
+  padding: 12px;
+  background: #6433E9;
+  color: white;
 }
 
 /*////SCROLL BAR///////////////////////////////////////////////////////////////////////*/
@@ -54,7 +60,7 @@
      background: #555;
  }
 
-/*////PROFILE////////////////////////////////////////////////////////////////*/
+/*////PROFILE PAGE////////////////////////////////////////////////////////////////*/
 
 #userPostsContainer {
   float: right;
@@ -73,9 +79,6 @@
   padding-right: 250px;
 
 }
-
-/* width: 630px;
-height: 650px; */
 
 /*/////POST CARDS///////////////////////////////////////////////////////////////////////*/
 
@@ -98,21 +101,7 @@ height: 650px; */
   width: 40%;
 }
 
-/* width: 625px;
-height: 200px; */
-
-/* height: 250px;
-width: 225px; */
-
-/*///EXPLORE PAGE///////////////////////////////////////////////////////////////////*/
-
-#mapContainer{
-  width: 50%;
-  float: left;
-  position: absolute;
-}
-
-/*///CREATE////////////////////////////////////////////////////////////////////*/
+/*///CREATE PAGE////////////////////////////////////////////////////////////////////*/
 
 #createPostsContainer {
   float: right;
@@ -131,17 +120,38 @@ width: 225px; */
 }
 
 .Create-search {
-  width: 100px;
+  padding-left: 45%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#location {
+  width: 300px;
   height: 20px;
 }
 
-.button {
-  width: 200px;
-  padding: 12px;
-  background: #6433E9;
-  color: white;
-  font-family: Bradley Hand, cursive;
+#description {
+  width: 300px;
+  height: 50px;
 }
 
-/*    width: 630px;
-  height: 650px; */
+#mapContainer{
+  width: 50%;
+  float: left;
+  position: absolute;
+}
+
+/*///EXPLORE PAGE////////////////////////////////////////////////////////////////////*/
+
+#mapExploreContainer {
+  width: 50%;
+  position: absolute;
+}
+
+#exploreHeader {
+  text-align: center;
+}
+
+#exploreContainer {
+  width: 100%
+}

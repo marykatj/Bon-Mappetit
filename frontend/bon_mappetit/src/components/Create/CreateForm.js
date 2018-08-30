@@ -13,13 +13,13 @@ class CreateForm extends Component {
   render() {
     return (
       <div>
-      <form onSubmit={this.handleSubmit} >
-        <input type="text" id="location" value={this.state.location} onChange={this.inputChange}/>
-        <textarea id="description" value={this.state.description} onChange={this.inputChange}/>
-        <div className="button-row">
-              <NavLink onClick={this.handleSubmit} className="button" to="/"> Share </NavLink>
-        </div>
-      </form>
+        <form onSubmit={this.handleSubmit} >
+          <input type="text" id="location" value={this.state.location} onChange={this.inputChange}/>
+          <textarea id="description" value={this.state.description} onChange={this.inputChange}/>
+          <div className="button-row">
+                <NavLink onClick={this.handleSubmit} className="button" to="/"> Share </NavLink>
+          </div>
+        </form>
      </div>
     );
   }

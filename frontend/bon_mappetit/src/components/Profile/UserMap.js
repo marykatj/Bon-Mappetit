@@ -5,7 +5,7 @@ class UserMap extends Component {
 
   render() {
     return (
-        <div className="User-map-container">
+        <div id='mapContainer'>
           <GoogleMap google={this.props.google} />
         </div>
     );
