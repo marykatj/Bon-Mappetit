@@ -10,13 +10,13 @@ postMapper = () => {
   } else {
        const filteredPosts = this.props.allUserLocations.filter(post => {return (post.location.toLowerCase().includes(this.props.userSearch.toLowerCase()))})
        return filteredPosts.map(post => <Posts post={post} key={post}/>)
-   }   
+   }
 }
 
   render() {
     return (
         <div id="userPostsContainer">
-          <h3> My food </h3>
+          <h2> savor. </h2>
           {this.postMapper()}
         </div>
     );

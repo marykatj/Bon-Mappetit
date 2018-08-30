@@ -15,7 +15,7 @@ handleChange = (event) => {
             <input id="search-bar" type='input' placeholder='Find your places...' value={this.props.search} onChange={this.handleChange}/>
       </form>
     </div>
-      )
+      )  
     }
 
 }

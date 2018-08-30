@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CreateForm from './CreateForm';
 import CreateMap from './CreateMap';
 import CreateSearch from './CreateSearch';
 import FormContainer from './FormContainer'

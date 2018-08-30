@@ -8,8 +8,8 @@ class ExplorePage extends Component {
     return (
         <div id='exploreContainer'>
           <h1 id='exploreHeader'> discover. </h1>
-          <ExploreMap />
           <ExploreSearch />
+          <ExploreMap />
         </div>
     );
   }

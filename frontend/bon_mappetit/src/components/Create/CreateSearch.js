@@ -12,7 +12,7 @@ class CreateSearch extends Component {
       return (
         <div className="Create-search">
           <form id="search-form">
-            <input id="search-bar" type='input' placeholder='Where are you?' />
+            <input id="search-bar" type='input' placeholder='Where are you?' value={this.props.search} onChange={this.handleChange}/>
       </form>
     </div>
       )
