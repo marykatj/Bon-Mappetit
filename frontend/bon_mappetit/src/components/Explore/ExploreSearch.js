@@ -3,11 +3,16 @@ import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete'
 
 class ExploreSearch extends Component {
 
-  state = {
-    address: ''
-    //   exploreSearchBar: {},
-    //   googlePlacesSearch: {},
-  }
+  constructor(props) {
+    super(props);
+    this.state = { address: '' }
+}
+
+  // state = {
+  //   exploreSearchBar: {},
+  //   googlePlacesSearch: {},
+  // }
+  //
 
 ////////////////////////////////////////////////////////////////////////////////
 
