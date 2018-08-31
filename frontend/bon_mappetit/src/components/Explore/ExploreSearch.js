@@ -21,13 +21,14 @@ class ExploreSearch extends Component {
   }
 
   handleSelect = (address) => {
-  const setLocation = this.props.setLocation // Pull in the setFormLocation function from the parent ReportForm
-
-  geocodeByAddress(address)
-    .then(function(results) {
-      setLocation(results[0].formatted_address) // Set the location in the parent ReportFrom
-    })
-    .catch(error => console.error('Error', error))
+    console.log(address)
+  // const setLocation = this.props.setLocation // Pull in the setFormLocation function from the parent ReportForm
+  //
+  // geocodeByAddress(address)
+  //   .then(function(results) {
+  //     setLocation(results[0].formatted_address) // Set the location in the parent ReportFrom
+  //   })
+  //   .catch(error => console.error('Error', error))
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -79,7 +80,6 @@ export default ExploreSearch;
 // }
 //
 // const googlePlacesURL = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${this.state.exploreSearchBar}&sensor=true&key=AIzaSyD8eyGeIVO1m-lMAwJ21o3qiUPRiuFV_ck`
-// //const googlePlacesURL = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+Grand+Rapids+Michigan&url=true&sensor=true&key=AIzaSyD8eyGeIVO1m-lMAwJ21o3qiUPRiuFV_ck`
 //
 //   fetch(googlePlacesURL, config)
 //   .then(response => response.json())

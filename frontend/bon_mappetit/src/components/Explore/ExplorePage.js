@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ExploreMap from './ExploreMap';
-import ExploreForm from './ExploreForm';
+import ExploreSearch from './ExploreSearch';
 
 class ExplorePage extends Component {
 
@@ -9,7 +9,7 @@ class ExplorePage extends Component {
     return (
       <div className="container">
         <h1 id='exploreHeader'> discover. </h1>
-        <ExploreForm setLocation={this.setLocation}/>
+        <ExploreSearch />
         <ExploreMap />
       </div>
     );
@@ -18,5 +18,3 @@ class ExplorePage extends Component {
 }
 
 export default ExplorePage;
-
- //<ExploreMap />

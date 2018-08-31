@@ -159,7 +159,7 @@
 .suggestion {
   background-color: #f1f1f1;
   color: gray;
-  font-size: 80%;
+  font-size: 100%;
   padding: 0.25em 0.7em;
   z-index: 10;
   position: absolute;
@@ -172,6 +172,7 @@
 }
 
 #autocomplete {
+  height: 50px;
   width: 100%;
   padding-left: 50%;
   float: right;
