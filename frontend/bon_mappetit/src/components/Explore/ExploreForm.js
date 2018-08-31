@@ -6,34 +6,35 @@ class ExploreForm extends Component {
   constructor() {    // Set up a state to help pass data back to the parent App component
     super()
     this.state = {
-      cityLoc: '',
-      stateLoc: ''
+      cityLocation: '',
+      stateLocation: ''
     }
   }
 
   // Get the info from the ExploreSearch component and save it to state here in ReportForm.
-  setFormLocation = (googleLocation) => {
-    let parsedLoc = googleLocation.split(', ') // The Google result comes back as a comma-separated string: "Austin, TX, USA". Parse it into usable data.
+  setLocation = (googleLocation) => {
+    let parsedLocation = googleLocation.split(', ') // The Google result comes back as a comma-separated string: "Austin, TX, USA". Parse it into usable data.
     this.setState({
-      cityLoc: parsedLoc[0],
-      stateLoc: parsedLoc[1]
+      cityLocation: parsedLocation[0],
+      stateLocation: parsedLocation[1]
     })
   }
 
   // Process the form submission with the info that was just saved to ReportForm.state
-  createReportLocation = (event) => {
+  createLocation = (event) => {
     event.preventDefault()
     const inputLocation = {
-      cityLoc: this.state.cityLoc,
-      stateLoc: this.state.stateLoc
+      cityLoc: this.state.cityLocation,
+      stateLoc: this.state.stateLocation
     }
     // Call the parent App component's setReportLocation function, which sets App.state. so that all other components will have access to it.
-    this.props.setReportLocation(inputLocation)
+    this.props.setLocation(inputLocation)
   }
 
   render(){
       return (
-        <form onSubmit={this.createReportLocation}  className="card card-body mb-3">
+        <div>
+        <form onSubmit={this.createLocation}  className="card card-body mb-3">
           <div className="row">
             <div className="col-sm-12">
               <p>Search here</p>
@@ -41,8 +42,8 @@ class ExploreForm extends Component {
           </div>
 
           <div className="row">
-            <div className="col-sm-10">
-              <ExploreSearch setFormLocation={this.setFormLocation}/>
+            <div className="col-sm-10" className="Explore-search">
+              <ExploreSearch setLocation={this.setLocation}/>
             </div>
 
             <div className="col-sm-2">
@@ -50,6 +51,7 @@ class ExploreForm extends Component {
             </div>
           </div>
         </form>
+        </div>
       )
     }
   }

@@ -6,7 +6,7 @@ class ExploreMap extends Component {
 
   render() {
     return (
-        <div id='mapExploreContainer'>
+        <div id='mapContainer'>
           <GoogleMap google={this.props.google}/>
         </div>
     );

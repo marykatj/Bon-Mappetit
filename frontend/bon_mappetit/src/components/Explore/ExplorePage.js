@@ -6,11 +6,10 @@ class ExplorePage extends Component {
 
 
   render() {
-
     return (
       <div className="container">
         <h1 id='exploreHeader'> discover. </h1>
-        <ExploreForm setReportLocation={this.setReportLocation} />
+        <ExploreForm setLocation={this.setLocation}/>
         <ExploreMap />
       </div>
     );
@@ -19,3 +18,5 @@ class ExplorePage extends Component {
 }
 
 export default ExplorePage;
+
+ //<ExploreMap />

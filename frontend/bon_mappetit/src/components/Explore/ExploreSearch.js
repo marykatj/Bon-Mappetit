@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-//import { connect } from 'react-redux';
-//import GoogleMap from '../GoogleMap'
-//import { exploreSearchAction } from '../../action'
 import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete'
+
+const searchBarStyle = {
+  float: "right"
+}
 
 class ExploreSearch extends Component {
 
@@ -16,26 +17,6 @@ class ExploreSearch extends Component {
   //   googlePlacesSearch: {},
   // }
   //
-    // componentDidMount() {
-    //   const config = {
-    //     headers: {
-    //       'Access-Control-Allow-Origin': '*',
-    //       'Access-Control-Allow-Methods': 'GET',
-    //       'Access-Control-Allow-Credentials': true,
-    //       'Access-Control-Allow-Headers': 'Content-Type',
-    //       'Content-Type': 'application/json'
-    //     }
-    // }
-    //
-    // const googlePlacesURL = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${this.state.exploreSearchBar}&sensor=true&key=AIzaSyD8eyGeIVO1m-lMAwJ21o3qiUPRiuFV_ck`
-    // //const googlePlacesURL = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+Grand+Rapids+Michigan&url=true&sensor=true&key=AIzaSyD8eyGeIVO1m-lMAwJ21o3qiUPRiuFV_ck`
-    //
-    //   fetch(googlePlacesURL, config)
-    //   .then(response => response.json())
-    //   .then(data => this.setState({
-    //     googlePlacesSearch: data
-    //   }))
-    // }
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -44,13 +25,11 @@ class ExploreSearch extends Component {
   }
 
   handleSelect = (address) => {
-  // Pull in the setFormLocation function from the parent ReportForm
-  const setFormLocation = this.props.setFormLocation         //search term state?
+  const setFormLocation = this.props.setFormLocation // Pull in the setFormLocation function from the parent ReportForm
 
   geocodeByAddress(address)
-    .then(function(results){
-      // Set the location in the parent ReportFrom
-      setFormLocation(results[0].formatted_address)
+    .then(function(results) {
+      setFormLocation(results[0].formatted_address) // Set the location in the parent ReportFrom
     })
     .catch(error => console.error('Error', error))
 }
@@ -60,7 +39,7 @@ class ExploreSearch extends Component {
 render() {
   const renderInput = ({ getInputProps, getSuggestionItemProps, suggestions }) => (
     <div className="autocomplete-root">
-      <input className="form-control" {...getInputProps()} />
+      <input className="form-control" {...getInputProps()} style={searchBarStyle}/>
       <div className="autocomplete-dropdown-container">
         {suggestions.map(suggestion => (
           <div {...getSuggestionItemProps(suggestion)} className="suggestion">
@@ -71,20 +50,16 @@ render() {
     </div>
   );
 
-  const searchOptions = {
-  types: ['(cities)'],
-  componentRestrictions: {country: "us"}
- }
-
     return (
-      <PlacesAutocomplete
-        value={this.state.address}
-        onChange={this.handleChange}
-        onSelect={this.handleSelect}
-        searchOptions={searchOptions}
-      >
-        {renderInput}
-      </PlacesAutocomplete>
+      <div className="Explore-search">
+        <PlacesAutocomplete
+          value={this.state.address}
+          onChange={this.handleChange}
+          onSelect={this.handleSelect}
+        >
+          {renderInput}
+        </PlacesAutocomplete>
+      </div>
     );
   }
 }
@@ -117,3 +92,24 @@ render() {
 
 //export default connect(mapStateToProps)(ExploreSearch);
 export default ExploreSearch;
+
+// componentDidMount() {
+//   const config = {
+//     headers: {
+//       'Access-Control-Allow-Origin': '*',
+//       'Access-Control-Allow-Methods': 'GET',
+//       'Access-Control-Allow-Credentials': true,
+//       'Access-Control-Allow-Headers': 'Content-Type',
+//       'Content-Type': 'application/json'
+//     }
+// }
+//
+// const googlePlacesURL = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${this.state.exploreSearchBar}&sensor=true&key=AIzaSyD8eyGeIVO1m-lMAwJ21o3qiUPRiuFV_ck`
+// //const googlePlacesURL = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+Grand+Rapids+Michigan&url=true&sensor=true&key=AIzaSyD8eyGeIVO1m-lMAwJ21o3qiUPRiuFV_ck`
+//
+//   fetch(googlePlacesURL, config)
+//   .then(response => response.json())
+//   .then(data => this.setState({
+//     googlePlacesSearch: data
+//   }))
+// }

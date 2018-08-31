@@ -17,12 +17,7 @@
     <script>
       var input = document.getElementById('autocomplete')
 
-      // Limit the results to just Cities in the US
-      var options = {
-        types: ['(cities)'],
-        componentRestrictions: {country: "us"}
-       }
-      var autocomplete = new google.maps.places.Autocomplete(input, options)
+      var autocomplete = new google.maps.places.Autocomplete(input)
 
       google.maps.event.addListener(autocomplete, 'place_changed', function(){
          var place = autocomplete.getPlace()

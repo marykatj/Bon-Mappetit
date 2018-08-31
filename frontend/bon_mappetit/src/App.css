@@ -161,5 +161,20 @@
   color: gray;
   font-size: 80%;
   padding: 0.25em 0.7em;
+  z-index: 10;
+  position: absolute;
+}
+
+.form-control {
   float: right;
+  z-index: 10;
+  position: absolute;
+}
+
+#autocomplete {
+  width: 100%;
+  padding-left: 50%;
+  float: right;
+  z-index: 10;
+  position: absolute;
 }
