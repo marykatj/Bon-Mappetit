@@ -42,7 +42,7 @@ class ExploreForm extends Component {
           </div>
 
           <div className="row">
-            <div className="col-sm-10" className="Explore-search">
+            <div className="col-sm-10">
               <ExploreSearch setLocation={this.setLocation}/>
             </div>
 

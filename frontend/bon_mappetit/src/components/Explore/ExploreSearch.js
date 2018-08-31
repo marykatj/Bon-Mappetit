@@ -1,22 +1,13 @@
 import React, { Component } from 'react'
 import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete'
 
-const searchBarStyle = {
-  float: "right"
-}
-
 class ExploreSearch extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { address: '' }
-}
-
-  // state = {
-  //   exploreSearchBar: {},
-  //   googlePlacesSearch: {},
-  // }
-  //
+  state = {
+    address: ''
+    //   exploreSearchBar: {},
+    //   googlePlacesSearch: {},
+  }
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -25,11 +16,11 @@ class ExploreSearch extends Component {
   }
 
   handleSelect = (address) => {
-  const setFormLocation = this.props.setFormLocation // Pull in the setFormLocation function from the parent ReportForm
+  const setLocation = this.props.setLocation // Pull in the setFormLocation function from the parent ReportForm
 
   geocodeByAddress(address)
     .then(function(results) {
-      setFormLocation(results[0].formatted_address) // Set the location in the parent ReportFrom
+      setLocation(results[0].formatted_address) // Set the location in the parent ReportFrom
     })
     .catch(error => console.error('Error', error))
 }
@@ -39,7 +30,7 @@ class ExploreSearch extends Component {
 render() {
   const renderInput = ({ getInputProps, getSuggestionItemProps, suggestions }) => (
     <div className="autocomplete-root">
-      <input className="form-control" {...getInputProps()} style={searchBarStyle}/>
+      <input className="form-control" {...getInputProps()} />
       <div className="autocomplete-dropdown-container">
         {suggestions.map(suggestion => (
           <div {...getSuggestionItemProps(suggestion)} className="suggestion">
@@ -51,34 +42,12 @@ render() {
   );
 
     return (
-      <div className="Explore-search">
-        <PlacesAutocomplete
-          value={this.state.address}
-          onChange={this.handleChange}
-          onSelect={this.handleSelect}
-        >
+        <PlacesAutocomplete value={this.state.address} onChange={this.handleChange} onSelect={this.handleSelect}>
           {renderInput}
         </PlacesAutocomplete>
-      </div>
     );
   }
 }
-
-//     render() {
-//       //console.log(this.state.exploreSearchBar)
-//       //console.log(this.state.searchBarLocation)
-//       //console.log(this.state.searchBarLocation.results)
-//       return (
-//         <div className="Explore-search">
-//           <form id="search-form" onSubmit={this.handleSubmit}>
-//             <input id="address" className='input-field' type='text' ref='input' placeholder='Search an area...' value={this.state.address} onChange={this.handleChange}/>
-//             <button onSubmit={this.handleSubmit}>Submit</button>
-//       </form>
-//     </div>
-//       )
-//     }
-//
-// }
 
 //////////////////////////////////////////////////////////////////////////////////
 
