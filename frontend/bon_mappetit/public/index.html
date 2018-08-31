@@ -6,9 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
 
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&language=en"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8eyGeIVO1m-lMAwJ21o3qiUPRiuFV_ck&libraries=places"></script>
     <title>Bon Mappétit</title>
   </head>
+
   <body>
     <div id="root"></div>
+    <input type="text" id="autocomplete"/>
+    <script>
+      var input = document.getElementById('autocomplete')
+
+      // Limit the results to just Cities in the US
+      var options = {
+        types: ['(cities)'],
+        componentRestrictions: {country: "us"}
+       }
+      var autocomplete = new google.maps.places.Autocomplete(input, options)
+
+      google.maps.event.addListener(autocomplete, 'place_changed', function(){
+         var place = autocomplete.getPlace()
+      })
+    </script>
   </body>
 </html>

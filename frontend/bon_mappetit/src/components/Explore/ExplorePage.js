@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import ExploreMap from './ExploreMap';
-import ExploreSearch from './ExploreSearch';
+import ExploreForm from './ExploreForm';
 
 class ExplorePage extends Component {
 
+
   render() {
+
     return (
-        <div id='exploreContainer'>
-          <h1 id='exploreHeader'> discover. </h1>
-          <ExploreSearch />
-          <ExploreMap />
-        </div>
+      <div className="container">
+        <h1 id='exploreHeader'> discover. </h1>
+        <ExploreForm setReportLocation={this.setReportLocation} />
+        <ExploreMap />
+      </div>
     );
   }
 
