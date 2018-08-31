@@ -1,27 +1,35 @@
 import React, { Component } from 'react'
 import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete'
 
+//        <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&language=en"></script>
+
 class ExploreSearch extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { address: '' }
+    this.state = {
+      term: '',
+      address: '',
+    }
 }
-
-  // state = {
-  //   exploreSearchBar: {},
-  //   googlePlacesSearch: {},
-  // }
-  //
 
 ////////////////////////////////////////////////////////////////////////////////
 
-  handleChange = (address) => {
-    this.setState({ address })
+  handleChange = (event) => {
+    console.log("hiiiiii!")
+    this.setState({
+      term: event.target.value
+    })
   }
 
-  handleSelect = (address) => {
-    console.log(address)
+  handleSelect = (event) => {
+    event.preventDefault();
+    this.setState({
+      address: event.target.value
+     })
+     //       let searchBox = new this.props.google.maps.places.SearchBox(event.target.value);
+     //       searchBox.setBounds(map.getBounds());
+  }
   // const setLocation = this.props.setLocation // Pull in the setFormLocation function from the parent ReportForm
   //
   // geocodeByAddress(address)
@@ -29,7 +37,14 @@ class ExploreSearch extends Component {
   //     setLocation(results[0].formatted_address) // Set the location in the parent ReportFrom
   //   })
   //   .catch(error => console.error('Error', error))
-}
+
+// handleChange = (term) => {
+//   console.log(term)
+//   this.setState({ term })
+// }
+//
+// handleSelect = (address) => {
+//   this.setState({ address })
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -48,7 +63,7 @@ render() {
   );
 
     return (
-        <PlacesAutocomplete value={this.state.address} onChange={this.handleChange} onSelect={this.handleSelect}>
+        <PlacesAutocomplete value={this.state.term} onChange={this.handleChange} onSelect={this.handleSelect}>
           {renderInput}
         </PlacesAutocomplete>
     );

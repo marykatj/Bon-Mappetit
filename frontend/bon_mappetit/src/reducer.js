@@ -30,8 +30,6 @@ export default function reducer(state = initialState, action) {
       return {...state, userSearch: action.term}
     case 'CREATE_SEARCH':
       return {...state, createSearch: action.term}
-    case 'EXPLORE_SEARCH':
-        return {...state, exploreSearch: action.term}
     default: return state;
   }
 
