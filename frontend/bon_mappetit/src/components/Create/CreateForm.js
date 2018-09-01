@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createPostAction } from '../../action';
 import { NavLink } from 'react-router-dom';
+import ExplorePage from '../Explore/ExplorePage';
 
 class CreateForm extends Component {
 
   state = {
-    location: '',
+    place: '',
     description: ''     // include photo: ''
   }
 
@@ -14,10 +15,11 @@ class CreateForm extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit} >
-          <input type="text" id="location" value={this.state.location} onChange={this.inputChange}/>
+          <input type="text" id="place" value={this.state.place} onChange={this.inputChange}/>
           <textarea id="description" value={this.state.description} onChange={this.inputChange}/>
           <div className="button-row">
-                <NavLink onClick={this.handleSubmit} className="button" to="/"> Share </NavLink>
+                <button className="button" type="button" onClick={this.uploadPhoto}> upload </button>
+                <NavLink onClick={this.handleSubmit} className="button" to="/"> share </NavLink>
           </div>
         </form>
      </div>
@@ -36,15 +38,14 @@ inputChange = (event) => {
     event.preventDefault();
     this.props.createPost(this.state)
     this.setState({
-        location: '',
+        place: '',
         description: ''     // include photo: ''
     })
   }
 
-  // uploadPhoto = () => {
-  //
-  // }
-  //   <button className="button" type="button" onClick={this.uploadPhoto}> Upload </button>
+  uploadPhoto = () => {
+    console.log("need Active Storage")
+  }
 
 
 };

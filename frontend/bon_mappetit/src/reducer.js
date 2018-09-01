@@ -1,4 +1,4 @@
-import { NAVIGATION_CLICK, SHARE, USER_SEARCH, CREATE_SEARCH, EXPLORE_SEARCH } from './types'
+import { NAVIGATION_CLICK, SHARE, USER_SEARCH, FETCH_ALL_DATA, FILTER_JUST_USER_POSTS } from './types'
 
 const initialState = {
   allUserLocations: [],
@@ -18,18 +18,20 @@ const initialState = {
 export default function reducer(state = initialState, action) {
 
   switch (action.type) {
-    case 'NAVIGATION_CLICK':
+    case NAVIGATION_CLICK:
       return {...state, currentPage: action.currentPage}
-    case 'SHARE':
+    case SHARE:
       let userPostArray = initialState.allUserLocations
       userPostArray.push(action.newPost)
       let allPostsArray = initialState.allPlaces
       allPostsArray.push(action.newPost)
       return {...state, allUserLocations: userPostArray, allPlaces: allPostsArray}
-    case 'USER_SEARCH':
+    case USER_SEARCH:
       return {...state, userSearch: action.term}
-    case 'CREATE_SEARCH':
-      return {...state, createSearch: action.term}
+    // case FETCH_All_DATA:
+    //   return {...state, allPlaces: action.allPosts}
+    case FILTER_JUST_USER_POSTS:
+      return {...state, allUserLocations: action.userPosts};
     default: return state;
   }
 

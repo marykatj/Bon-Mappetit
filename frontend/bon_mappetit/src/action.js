@@ -1,4 +1,3 @@
-import { NAVIGATION_CLICK, SHARE, USER_SEARCH, CREATE_SEARCH, EXPLORE_SEARCH } from './types'
 
 export function changePageAction(urlPath) {
   if (urlPath.includes('/profile')) {
@@ -19,17 +18,19 @@ export function createPostAction(post) {
   return { type: 'SHARE', newPost: post}
   }
 
-  export function userSearchAction(term) {
-    return { type: 'USER_SEARCH', term: term}
-    }
+export function userSearchAction(term) {
+  return { type: 'USER_SEARCH', term: term}
+  }
 
-    export function createSearchAction(term) {
-      return { type: 'CREATE_SEARCH', term: term}
-      }
 
-      export function exploreSearchAction(term) {
-        return { type: 'EXPLORE_SEARCH', term: term}
-        }
+  // export function fetchPostsAction(data) {
+  //   return { type: 'FETCH_ALL_DATA', allPosts: data}
+  //   }
+  //
+  //   export function userPostsAction(filteredPosts) {
+  //     return { type: 'FILTER_JUST_USER_POSTS', userPosts: filteredPosts}
+  //     }
+
 
 // export function fetchMapsAction() {
 //   AnimalAdapter.getMaps()
@@ -40,8 +41,3 @@ export function createPostAction(post) {
 //        }
 //      })
 //    }
-
-
-// why do we need types?
-// should i make an adapter file?
-// is this action.js file totally neccessary?

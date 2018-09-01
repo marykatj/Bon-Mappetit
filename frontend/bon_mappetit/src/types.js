@@ -3,3 +3,5 @@ export const SHARE = 'SHARE';
 export const USER_SEARCH = 'USER_SEARCH';
 export const CREATE_SEARCH = 'CREATE_SEARCH';
 export const EXPLORE_SEARCH = 'EXPLORE_SEARCH';
+export const FETCH_ALL_DATA = 'FETCH_ALL_DATA';
+export const FILTER_JUST_USER_POSTS = 'FILTER_JUST_USER_POSTS;'

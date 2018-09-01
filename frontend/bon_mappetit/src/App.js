@@ -6,15 +6,8 @@ import UserPage from './components/Profile/UserPage';
 import CreatePage from './components/Create/CreatePage';
 import ExplorePage from './components/Explore/ExplorePage';
 
-
-// const API_URL = `...`
-// const PROXY_URL = `...`
-
 class App extends Component {
 
-//API FETCH HERE
-//adaptor optional
-//MapAdapter.getMaps().then(url => this.props.fetchMaps(url))
 
 //////////////////////////////////////////////////////////////////////////////
 
@@ -45,39 +38,46 @@ export default App;
 //<NavBar {/*handleClick={this.handleClick}*/} />
 //import UUID from 'uuid'
 
-
-// NOTES: Create & Explore search bars are functional to state.  Need to insert this into relevant Component
-
-// function mapStateToProps(state) {
-//   return {
-//     createSearch: state.createSearch,
-//   }
-// } && export default connect(mapStateToProps, mapDispatchToProps)(CreateSearch)
-//
-// && need to run a check = () => filter function over the term versus the state.
-
-// font-family: Apple Chancery, cursive; 
-
 //Structure///////////////////////////////////////////////////////////////////
 
 
 // <App />
-//   <NavBar />                                          ----DONE
+//   <NavBar />                                         ---DONE
 //   <LoggedInUser />
-//   <NavBar />
-//   		Routes: Profile, Explore, Create, Logout          ---- DONE
+//   <NavBar />                                         ---DONE
+//   		Routes: Profile, Explore, Create, Logout        ---DONE
 //
 //   <UserProfile />
 //             <UserInfo />
 //   	         <UserMap />
 //             <UserPosts />
-//                  <Post />
-//            <UserSearch />
+//                  <Post />                            ---DONE
+//            <UserSearch />                            ---DONE
 //
 //   <Create />
 //             <CreateMap />
 //             <CreateForm />
-//            <CreateSearch />
 //   <Explore />
 //             <ExploreSearch />
 //   	         <ExploreMap />
+
+
+// Share Button NavLink
+
+// Rails Backend: issues with postgres installment.
+//   user: name, location, avatar
+//   post: place, image, desription, user_id
+//
+//   Backend Routes & Serializer
+//   Active Storage
+//   Auth
+
+// Map:
+//   need markers component
+//   need map boundaries to adjust with the search bar
+
+
+// Redux Auth & User Login/Create Account Page. photo upload for avatar.
+
+//Edit functionality for UserPosts
+//NavBar photo formatting & fake user posts

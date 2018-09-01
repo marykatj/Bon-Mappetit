@@ -15,7 +15,7 @@ handleChange = (event) => {
             <input id="search-bar" type='input' placeholder='Find your places...' value={this.props.search} onChange={this.handleChange}/>
       </form>
     </div>
-      )  
+      )
     }
 
 }
@@ -33,7 +33,7 @@ function mapDispatchToProps(dispatch) {
     userSearch: (term) => dispatch(userSearchAction(term)),
     dispatch
   }
-  }
+}
 /////////////////////////////////////////////////////////////////////////////////
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserSearch);

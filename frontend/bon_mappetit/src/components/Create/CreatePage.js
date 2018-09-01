@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CreateMap from './CreateMap';
-import CreateSearch from './CreateSearch';
 import FormContainer from './FormContainer'
 
 class CreatePage extends Component {
@@ -9,7 +8,6 @@ class CreatePage extends Component {
       return (
           <div>
           <h2 id='exploreHeader'> share. </h2>
-            <CreateSearch />
             <FormContainer />
             <CreateMap />
           </div>

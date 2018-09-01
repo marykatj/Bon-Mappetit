@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 
 class Posts extends Component {
 
+  // constructor(props) {
+  //   this.id = props.id;
+  //   this.place = props.place;
+  //   this.description = props.description;
+  //   this.image = props.image;                    //user_id?
+  //   Post.all.push(this);
+  // }
+
   render() {
     return (
       <div>
@@ -15,9 +23,10 @@ class Posts extends Component {
             </div>
 
             <div className="card-body">
-              <h4 className="card-title"><strong>{this.props.post.location}</strong></h4>
+              <h4 className="card-title"><strong>{this.props.post.place}</strong></h4>
               <p className="card-text">{this.props.post.description}
               </p>
+              <button data-id={this.props.post.id}>edit</button>
             </div>
           </div>
       </div>
