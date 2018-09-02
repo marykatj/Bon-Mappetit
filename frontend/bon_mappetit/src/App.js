@@ -81,3 +81,8 @@ export default App;
 
 //Edit functionality for UserPosts
 //NavBar photo formatting & fake user posts
+
+
+
+// We would also need to create an axiosClient to ensure that the API base URL
+// is pointing to the Rails server. To do that, create a file src/axiosClient.js with the following content:

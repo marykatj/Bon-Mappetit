@@ -54,6 +54,10 @@ class ExploreSearch extends Component {
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
+click = () => {
+  console.log("wolfgang sucks")
+}
+
 render() {
   const renderInput = ({ getInputProps, getSuggestionItemProps, suggestions }) => (
     <div className="autocomplete-root" >
@@ -69,7 +73,7 @@ render() {
   );
 
     return (
-        <PlacesAutocomplete value={this.state.term} onChange={this.handleChange} onSelect={this.handleSelect}>
+        <PlacesAutocomplete value={this.state.term} onChange={this.handleChange} onSelect={this.handleSelect} onClick={this.click}>
           {renderInput}
         </PlacesAutocomplete>
     );

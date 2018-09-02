@@ -16,7 +16,7 @@ class Posts extends Component {
           <div id="card">
 
             <div>
-              <img className="card-image-left" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt=""/>
+              <img className="card-image-left" src={this.props.post.photo} alt=""/>
               <a>
                 <div></div>
               </a>

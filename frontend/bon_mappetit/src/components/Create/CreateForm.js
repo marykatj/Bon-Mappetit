@@ -8,17 +8,28 @@ class CreateForm extends Component {
 
   state = {
     place: '',
-    description: ''     // include photo: ''
+    description: '',
+    photo: ''
   }
 
+  // style={{
+  //   width: 0.1,
+  //   height: 0.1,
+  //   opacity: 0,
+  //   overflow: 'hidden',
+  //   position: 'absolute',
+  //   zIndex: -1
+  // }}
+
   render() {
+    //console.log(this.state)
     return (
       <div>
         <form onSubmit={this.handleSubmit} >
           <input type="text" id="place" value={this.state.place} onChange={this.inputChange}/>
           <textarea id="description" value={this.state.description} onChange={this.inputChange}/>
           <div className="button-row">
-                <button className="button" type="button" onClick={this.uploadPhoto}> upload </button>
+          <input name="image" type="file" accept="image/*" id="photo" onChange={this.inputChange} />
                 <NavLink onClick={this.handleSubmit} className="button" to="/"> share </NavLink>
           </div>
         </form>
@@ -39,14 +50,10 @@ inputChange = (event) => {
     this.props.createPost(this.state)
     this.setState({
         place: '',
-        description: ''     // include photo: ''
+        description: '',
+        photo: ''
     })
   }
-
-  uploadPhoto = () => {
-    console.log("need Active Storage")
-  }
-
 
 };
 
