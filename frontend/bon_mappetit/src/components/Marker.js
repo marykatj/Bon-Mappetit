@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
+import { Marker } from 'google-maps-react';
 
-// let marker = new google.maps.Marker({
-//   position: somePosition,                           //?
-//   map: map                                          // ?
-// })
-
-class Marker extends Component {
+class MapsMarker extends Component {
 
   render() {
     return (
-      null
+      <div>
+      </div>
     )
   }
 
 }
 
-export default Marker;
+export default MapsMarker;

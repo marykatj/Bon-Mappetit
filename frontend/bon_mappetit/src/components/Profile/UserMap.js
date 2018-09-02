@@ -10,8 +10,8 @@ class UserMap extends Component {
     return (
         <div id='mapContainer'>
           <GoogleMap google={this.props.google} position={pos}/>
-          <Marker />
-          <Marker position={pos} />
+          <Marker google={this.props.google} position={pos}/>
+          <Marker position={pos} google={this.props.google}/>
         </div>
     );
   }

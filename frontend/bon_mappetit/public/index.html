@@ -5,23 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
-
+    <title>Bon Mappétit</title>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8eyGeIVO1m-lMAwJ21o3qiUPRiuFV_ck&libraries=places"></script>
     <script src="src/index.js" charset="utf-8"></script>
-    <title>Bon Mappétit</title>
   </head>
 
   <body>
     <div id="root"></div>
-    <input type="text" id="autocomplete"/>
+    <input type="text" id="autocomplete" placeholder="Start typing here..."/>
     <script>
-      var input = document.getElementById('autocomplete')
+          var input = document.getElementById('autocomplete')
+          var autocomplete = new google.maps.places.Autocomplete(input)
+          google.maps.event.addListener(autocomplete, 'place_changed', function(){
+             var place = autocomplete.getPlace()
+          })
 
-      var autocomplete = new google.maps.places.Autocomplete(input)
-
-      google.maps.event.addListener(autocomplete, 'place_changed', function(){
-         var place = autocomplete.getPlace()
-      })
-    </script>
-  </body>
+          map.controls[google.maps.ControlPosition.TOP_LEFT].push(input)
+      </script>
+    </body>
 </html>
