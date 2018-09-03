@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import ExploreMap from './ExploreMap';
-import ExploreSearch from './ExploreSearch';
+import LocationSearchInput from '../Umbrella/LocationSearchInput'
+import ExploreMap from './ExploreMap'
 
 class ExplorePage extends Component {
 
-
   render() {
     return (
-      <div className="container">
+      <div>
         <h1 id='exploreHeader'> discover. </h1>
-        <ExploreSearch />
+        <LocationSearchInput />
         <ExploreMap />
       </div>
     );

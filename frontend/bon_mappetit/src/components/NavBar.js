@@ -30,7 +30,7 @@ class NavBar extends Component {
               <p className="App-slogan">
                 indulge a little.
               <span>
-                    <NavLink onClick={this.handleClick} activeClassName="active" to="/" style={linkStyle}> Explore </NavLink>
+                    <NavLink onClick={this.handleClick} activeClassName="active" to="/explore" style={linkStyle}> Explore </NavLink>
       							<NavLink onClick={this.handleClick} activeClassName="active" to="/profile" style={linkStyle}> Profile </NavLink>
       							<NavLink onClick={this.handleClick} activeClassName="active" to="/create" style={linkStyle}> Create </NavLink>
       				</span>

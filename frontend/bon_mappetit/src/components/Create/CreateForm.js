@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { createPostAction } from '../../action';
 import { NavLink } from 'react-router-dom';
 import ExplorePage from '../Explore/ExplorePage';
+import { changePageAction } from '../../action'
 
 class CreateForm extends Component {
 
@@ -12,25 +13,17 @@ class CreateForm extends Component {
     photo: ''
   }
 
-  // style={{
-  //   width: 0.1,
-  //   height: 0.1,
-  //   opacity: 0,
-  //   overflow: 'hidden',
-  //   position: 'absolute',
-  //   zIndex: -1
-  // }}
-
   render() {
-    //console.log(this.state)
     return (
       <div>
         <form onSubmit={this.handleSubmit} >
           <input type="text" id="place" value={this.state.place} onChange={this.inputChange}/>
           <textarea id="description" value={this.state.description} onChange={this.inputChange}/>
           <div className="button-row">
-          <input name="image" type="file" accept="image/*" id="photo" onChange={this.inputChange} />
-                <NavLink onClick={this.handleSubmit} className="button" to="/"> share </NavLink>
+          <input name="image" type="file" accept="image/*" id="photo" ref={(ref) => { this.handleFileUpload = ref; }} onChange={this.photoChange}/>
+          <span>
+            <NavLink onClick={this.handleSubmit} className="button" to="/profile"> share </NavLink>
+          </span>
           </div>
         </form>
      </div>
@@ -39,14 +32,26 @@ class CreateForm extends Component {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-inputChange = (event) => {
+handleFileUpload = () => {              //NEVER HITS
+  console.log("hi")
+  //event.target.value
+}
+
+inputChange = (event) => {                  // works.
   this.setState({
-      [event.target.id]: event.target.value
+      [event.target.id]: event.target.value,
   })
 }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+photoChange = (event) => {                        //works
+  console.log(event.target.value)                 //fake path!  Need to parse the fake path into a real one.
+  this.setState({
+    photo: event.target.value
+  })
+}
+
+  handleSubmit = (event) => {                         //works.
+    this.props.changePage(event.target.href)
     this.props.createPost(this.state)
     this.setState({
         place: '',
@@ -54,7 +59,6 @@ inputChange = (event) => {
         photo: ''
     })
   }
-
 };
 
 
@@ -64,15 +68,17 @@ function mapStateToProps(state) {             //totally needed????
   return {
     allUserLocations: state.allUserLocations,
     allPlaces: state.allPlaces,
+    currentPage: state.currentPage
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     createPost: (post) => dispatch(createPostAction(post)),
+    changePage: (page) => dispatch(changePageAction(page)),
     dispatch
   }
-  }
+}
 
 ////////////////////////////////////////////////////////////////////////////
 
@@ -84,3 +90,37 @@ export default connect(mapStateToProps, mapDispatchToProps)(CreateForm);
 // submit button, trigger a Nav link to profile page
 //put the buttons into a span
 // create the actual post, to push up to the reducer
+
+// onFormSubmit(event){
+//   event.preventDefault() // Stop form submit
+//   this.fileUpload(this.state.photo).then((response)=>{
+//     console.log(response.data);
+//   })
+// }
+
+//   onChange(event) {
+//   this.setState({file:event.target.files[0]})
+// }
+
+// fileUpload(file) {
+//     const url = 'http://example.com/file-upload';
+//     const formData = new FormData();
+//     formData.append('file',file)
+//     const config = {
+//         headers: {
+//             'content-type': 'multipart/form-data'
+//         }
+//     }
+//     return  post(url, formData,config)
+//   }
+
+// style={{
+//   width: 0.1,
+//   height: 0.1,
+//   opacity: 0,
+//   overflow: 'hidden',
+//   position: 'absolute',
+//   zIndex: -1
+// }}
+
+//<File handleFileUpload={this.handleFileUpload}/>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete'
+import PlacesAutocomplete, { geocodeByAddress, geocodeByPlaceId, getLatLng } from 'react-places-autocomplete'
 
 // <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&language=en"></script>
 
@@ -81,6 +81,32 @@ render() {
 }
 
 //////////////////////////////////////////////////////////////////////////////////
+
+// <input type="text" id="autocomplete" placeholder="Start typing here..."/>
+//   <script>
+//
+//         let input = document.getElementById('autocomplete')
+//         let autocomplete = new google.maps.places.Autocomplete(input)
+//
+//         google.maps.event.addListener(autocomplete, 'place_changed', function() {
+//            let place = autocomplete.getPlace();
+//            let address = place.formatted_address;
+//            let name = place.name;
+//            let newCenter = place.geometry.location;
+//         });
+//     </script>
+//     <div id="map"/>
+//       <script>
+//
+//             let map = document.getElementById('map')
+//
+//             google.maps.event.addListener(map, 'place_changed', function() {
+//               console.log(newCenter)
+//                map.setCenter(newCenter)
+//             });
+//
+//
+//         </script>
 
 // function mapStateToProps(state) {
 //   return {

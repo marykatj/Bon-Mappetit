@@ -142,6 +142,11 @@
   position: absolute;
 }
 
+#exploreContainer{
+  width: 100%;
+  position: absolute;
+}
+
 /*///EXPLORE PAGE////////////////////////////////////////////////////////////////////*/
 
 #mapExploreContainer {

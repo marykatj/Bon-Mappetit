@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import NavBar from './components/NavBar';
 import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
+import NavBar from './components/NavBar';
 import UserPage from './components/Profile/UserPage';
 import CreatePage from './components/Create/CreatePage';
 import ExplorePage from './components/Explore/ExplorePage';
@@ -16,20 +17,32 @@ class App extends Component {
       <div>
         <NavBar />
         <Switch>
-          <Route path='/profile' render={ () => (
-            <UserPage />
+          <Route path='/explore' component={ ExplorePage } />
+          <Route path='/profile' render={ (props) => (
+            <UserPage {...props}/>
           )} />
-          <Route path='/create' render={ () => (
-            <CreatePage />
+          <Route path='/create' render={ (props) => (
+            <CreatePage {...props}/>
           )} />
-          <Route path='/' component={ ExplorePage } />
         </Switch>
       </div>
     );
   }
 }
 
-export default App;
+////////////////////////////////////////////////////////////////////////////////
+
+function mapStateToProps(state) {
+  return {
+    currentPage: state.currentPage
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////
+
+export default connect(mapStateToProps)(App);
+
+//export default App;
 
 ////////////////////////////////////////////////////////////////////////////
 

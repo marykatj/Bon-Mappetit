@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import GoogleMap from '../GoogleMap'
+import NewMap from '../Umbrella/NewMap'
 
 class CreateMap extends Component {
 
   render() {
     return (
         <div id='mapContainer'>
-          <GoogleMap google={this.props.google}/>
+          <NewMap />
         </div>
     );
   }

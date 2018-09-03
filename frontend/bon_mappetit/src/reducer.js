@@ -1,12 +1,12 @@
-import { NAVIGATION_CLICK, SHARE, USER_SEARCH, FETCH_ALL_DATA, FILTER_JUST_USER_POSTS } from './types'
+import { NAVIGATION_CLICK, SHARE, USER_SEARCH, FETCH_ALL_DATA, FILTER_JUST_USER_POSTS, COORD_CHANGE } from './types'
 
 const initialState = {
   allUserLocations: [],
   allPlaces: [],
 
-  selectedLocation: {},
-  currentBrowserLocation: '',
+  currentBrowserLocation: {},
   mapWindowArea: {},
+  coord: {},
 
   userSearch: '',
   exploreSearch: '',
@@ -28,6 +28,8 @@ export default function reducer(state = initialState, action) {
       return {...state, allUserLocations: userPostArray, allPlaces: allPostsArray}
     case USER_SEARCH:
       return {...state, userSearch: action.term}
+    case COORD_CHANGE:
+      return {...state, coord: action.coord}
     // case FETCH_All_DATA:
     //   return {...state, allPlaces: action.allPosts}
     case FILTER_JUST_USER_POSTS:

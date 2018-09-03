@@ -8,7 +8,7 @@ export function changePageAction(urlPath) {
       let page = 'create'
       return { type: 'NAVIGATION_CLICK', currentPage: page}
     }
-  else if (urlPath.includes('/')) {
+  else if (urlPath.includes('/explore')) {
         let page = 'explore'
         return { type: 'NAVIGATION_CLICK', currentPage: page}
     }
@@ -21,6 +21,10 @@ export function createPostAction(post) {
 export function userSearchAction(term) {
   return { type: 'USER_SEARCH', term: term}
   }
+
+export function userCoordinatesAction(coord) {
+  return { type: 'COORD_CHANGE', coord: coord }
+}
 
 
   // export function fetchPostsAction(data) {
