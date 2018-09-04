@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import coffee from '../../images/Coffee.jpg'
+//import coffee from '../../images/Coffee.jpg'
 
 class Posts extends Component {
 
   render() {
-    console.log(this.props.post.photo)
-    const imagePath = `chrome-extension://oahagehaecaffokbpkdmhdikdkjmimlg/${this.props.post.photo}`
 
     return (
       <div>
           <div id="card">
 
             <div>
-              <img className="card-image-left" src={imagePath} alt=""/>
+              <img className="card-image-left" src={this.props.post.photo} alt=""/>
               <a>
                 <div></div>
               </a>

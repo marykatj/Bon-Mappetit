@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import pin from '../../images/logo.png'
-import tempImage from '../../images/Coffee.jpg'
+//import tempImage from '../../images/Coffee.jpg'
 
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -66,11 +66,12 @@ class MapsMarker extends Component {
 ////////////////////////////////////////////////////////////////////////////////
 
   render() {
+    console.log(this.props.photo)    ////UNDEFINED.
     return (
       <div>
         <img className='currentIcon' src={pin} alt='' style={markerStyle}/>
         <div>
-          <img src={tempImage} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
+          <img src={this.props.photo} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
           {this.state.clicked === true ? (<p style={tileStyle}> {this.state.name} </p>) : null }
         </div>
       </div>

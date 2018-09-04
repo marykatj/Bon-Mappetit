@@ -27,8 +27,8 @@ class NewMap extends Component {
 ///////////////////////////////////////////////////////////////////////////////
 
   createAllMarkers = () => {
-    console.log("Custard Butt.")
-      return this.props.allMarkers.map( place => <MapsMarker lat={place.lat} lng={place.lng} key={place} place={place}/>)
+    console.log(this.props.allPlaces)
+      return this.props.allMarkers.map( place => <MapsMarker lat={place.lat} lng={place.lng} key={place} place={place} photo={this.props.allPlaces.photo}/>)  //NEED this specific photo
    }
 
    // return this.props.userMarkers.map( place => <MapsMarker lat={place.lat} lng={place.lng} key={place}/>)  // create a different marker image. Only render on user page.
@@ -40,7 +40,9 @@ function mapStateToProps(state) {
   return {
     coord: state.coord,
     allMarkers: state.allMarkers,
-    userMarkers: state.userMarkers
+    userMarkers: state.userMarkers,
+    allUserLocations: state.allUserLocations,
+    allPlaces: state.allPlaces,
   }
 }
 

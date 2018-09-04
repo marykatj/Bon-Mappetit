@@ -8,7 +8,6 @@ class UserPosts extends Component {
 ////////////////////////////////////////////////////////////////////////////////
 
 postMapper = () => {
-  //console.log(this.props.allUserLocations)
   if (this.props.userSearch === '') {
     return this.props.allUserLocations.map(post => <Posts post={post} key={post}/>)
   } else {

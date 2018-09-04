@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createPostAction } from '../../action';
+import { createPostAction, changePageAction } from '../../action';
 import { NavLink } from 'react-router-dom';
 import ExplorePage from '../Explore/ExplorePage';
-import { changePageAction } from '../../action'
 
 class CreateForm extends Component {
 
@@ -40,9 +39,9 @@ inputChange = (event) => {
 photoChange = () => {                       // https://davidwalsh.name/fakepath
   const parsedPath = document.getElementById('photo').files[0].name         //both these improve the file path.
   //const parsedPath = event.target.value.replace("C:\\fakepath\\", "");
-  console.log(parsedPath)
+  const imagePath = `chrome-extension://oahagehaecaffokbpkdmhdikdkjmimlg/${parsedPath}`
   this.setState({
-    photo: parsedPath
+    photo: imagePath
   })
 }
 
