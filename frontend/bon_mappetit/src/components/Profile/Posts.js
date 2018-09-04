@@ -18,7 +18,7 @@ class Posts extends Component {
             </div>
 
             <div className="card-body">
-              <h4 className="card-title"><strong>{this.props.address}</strong></h4>
+              <h4 className="card-title"><strong>{this.props.post.address}</strong></h4>
               <p className="card-text">{this.props.post.description}
               </p>
               <button data-id={this.props.post.id}>edit</button>
@@ -30,7 +30,7 @@ class Posts extends Component {
 
 }
 
-function mapStateToProps(state) {             //totally needed????
+function mapStateToProps(state) {
   return {
     address: state.address
   }

@@ -74,8 +74,13 @@ export default connect(mapStateToProps)(App);
 //             <ExploreSearch />
 //   	         <ExploreMap />
 
+//TIDY UP:
 
+//searchbar: make full text appear upon selection
+// geolocation on map
+// clicke event on marker to render a tile component
 // Share Button NavLink
+// User profile avatar
 
 // Rails Backend: issues with postgres installment.
 //   user: name, location, avatar
@@ -85,17 +90,8 @@ export default connect(mapStateToProps)(App);
 //   Active Storage
 //   Auth
 
-// Map:
-//   need markers component
-//   need map boundaries to adjust with the search bar
-
 
 // Redux Auth & User Login/Create Account Page. photo upload for avatar.
 
 //Edit functionality for UserPosts
 //NavBar photo formatting & fake user posts
-
-
-
-// We would also need to create an axiosClient to ensure that the API base URL
-// is pointing to the Rails server. To do that, create a file src/axiosClient.js with the following content:

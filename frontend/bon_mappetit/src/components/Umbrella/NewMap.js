@@ -3,12 +3,6 @@ import GoogleMapReact from 'google-map-react';
 import { connect } from 'react-redux';
 import MapsMarker from './MapsMarker'
 
-//searchbar: make full text appear upon selection
-// geolocation on map
-
-// photo upload
-// clicke event on marker to render a tile component
-
 class NewMap extends Component {
 
   render() {
@@ -28,10 +22,8 @@ class NewMap extends Component {
 
   createAllMarkers = () => {
     console.log(this.props.allPlaces)
-      return this.props.allMarkers.map( place => <MapsMarker lat={place.lat} lng={place.lng} key={place} place={place} photo={this.props.allPlaces.photo}/>)  //NEED this specific photo
+      return this.props.allPlaces.map( place => <MapsMarker lat={place.lat} lng={place.lng} key={place} place={place} />)
    }
-
-   // return this.props.userMarkers.map( place => <MapsMarker lat={place.lat} lng={place.lng} key={place}/>)  // create a different marker image. Only render on user page.
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -42,7 +34,7 @@ function mapStateToProps(state) {
     allMarkers: state.allMarkers,
     userMarkers: state.userMarkers,
     allUserLocations: state.allUserLocations,
-    allPlaces: state.allPlaces,
+    allPlaces: state.allPlaces
   }
 }
 

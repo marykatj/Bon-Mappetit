@@ -20,7 +20,7 @@ class LocationSearchInput extends Component {
     this.props.createAddress(address)
     geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
-      .then(latLng => this.props.userCoordinates(latLng));
+      .then(latLng => this.props.userCoordinates(latLng));  //need to attach coordinates to post. Address is attached somehow.
   };
 
 

@@ -48,7 +48,6 @@ class MapsMarker extends Component {
   }
 
   markerClick = () => {
-    console.log(this.props.address)
     this.setState({
       currentIcon: this.props.place,
       clicked: true,
@@ -66,13 +65,12 @@ class MapsMarker extends Component {
 ////////////////////////////////////////////////////////////////////////////////
 
   render() {
-    console.log(this.props.photo)    ////UNDEFINED.
     return (
       <div>
         <img className='currentIcon' src={pin} alt='' style={markerStyle}/>
         <div>
-          <img src={this.props.photo} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
-          {this.state.clicked === true ? (<p style={tileStyle}> {this.state.name} </p>) : null }
+          <img src={this.props.place.photo} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
+          {this.state.clicked === true ? (<p style={tileStyle}> {this.props.place.address} </p>) : null }
         </div>
       </div>
     )
@@ -83,9 +81,7 @@ class MapsMarker extends Component {
 
 function mapStateToProps(state) {
   return {
-    address: state.address,
-    allUserLocations: state.allUserLocations,
-    userSearch: state.userSearch
+    address: state.address
   }
 }
 

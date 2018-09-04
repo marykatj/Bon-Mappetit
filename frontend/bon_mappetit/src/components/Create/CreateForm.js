@@ -7,8 +7,11 @@ import ExplorePage from '../Explore/ExplorePage';
 class CreateForm extends Component {
 
   state = {
+    address: this.props.address,
     description: '',
-    photo: ''
+    photo: '',
+    lat: this.props.coord.lat,
+    lng: this.props.coord.lng,
   }
 
   render() {
@@ -49,8 +52,11 @@ photoChange = () => {                       // https://davidwalsh.name/fakepath
     this.props.changePage(event.target.href)
     this.props.createPost(this.state)
     this.setState({
+        address: this.state.address,
         description: '',
-        photo: ''
+        photo: '',
+        lat: this.props.coord.lat,
+        lng: this.props.coord.lng
     })
   }
 };
@@ -63,7 +69,8 @@ function mapStateToProps(state) {
     allUserLocations: state.allUserLocations,
     allPlaces: state.allPlaces,
     currentPage: state.currentPage,
-    address: state.address
+    address: state.address,
+    coord: state.coord
   }
 }
 

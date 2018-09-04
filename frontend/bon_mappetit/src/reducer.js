@@ -27,7 +27,7 @@ export default function reducer(state = initialState, action) {
     case SHARE:
       let userPostArray = state.allUserLocations
       userPostArray.push(action.newPost)
-      let allPostsArray = state.allPlaces
+      let allPostsArray = state.allPlaces  
       allPostsArray.push(action.newPost)
       return {...state, allUserLocations: userPostArray, allPlaces: allPostsArray}
     case USER_SEARCH:
