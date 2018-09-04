@@ -8,7 +8,6 @@ import { changePageAction } from '../../action'
 class CreateForm extends Component {
 
   state = {
-    place: '',
     description: '',
     photo: ''
   }
@@ -17,10 +16,10 @@ class CreateForm extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit} >
-          <input type="text" id="place" value={this.state.place} onChange={this.inputChange}/>
+          <input type="text" id="place" value={this.props.address} onChange={this.inputChange}/>
           <textarea id="description" value={this.state.description} onChange={this.inputChange}/>
           <div className="button-row">
-          <input name="image" type="file" accept="image/*" id="photo" ref={(ref) => { this.handleFileUpload = ref; }} onChange={this.photoChange}/>
+          <input name="image" type="file" accept="image/*" id="photo" onChange={this.photoChange}/>
           <span>
             <NavLink onClick={this.handleSubmit} className="button" to="/profile"> share </NavLink>
           </span>
@@ -32,29 +31,25 @@ class CreateForm extends Component {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-handleFileUpload = () => {              //NEVER HITS
-  console.log("hi")
-  //event.target.value
-}
-
-inputChange = (event) => {                  // works.
+inputChange = (event) => {
   this.setState({
       [event.target.id]: event.target.value,
   })
 }
 
-photoChange = (event) => {                        //works
-  console.log(event.target.value)                 //fake path!  Need to parse the fake path into a real one.
+photoChange = () => {
+  const parsedPath = document.getElementById('photo').files[0].name         //both these improve the file path.
+  //const parsedPath = event.target.value.replace("C:\\fakepath\\", "");
+  console.log(parsedPath)
   this.setState({
-    photo: event.target.value
+    photo: parsedPath
   })
 }
 
-  handleSubmit = (event) => {                         //works.
+  handleSubmit = (event) => {
     this.props.changePage(event.target.href)
     this.props.createPost(this.state)
     this.setState({
-        place: '',
         description: '',
         photo: ''
     })
@@ -64,11 +59,12 @@ photoChange = (event) => {                        //works
 
 ////////////////////////////////////////////////////////////////////////////////
 
-function mapStateToProps(state) {             //totally needed????
+function mapStateToProps(state) {      
   return {
     allUserLocations: state.allUserLocations,
     allPlaces: state.allPlaces,
-    currentPage: state.currentPage
+    currentPage: state.currentPage,
+    address: state.address
   }
 }
 

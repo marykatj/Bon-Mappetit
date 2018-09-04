@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import coffee from '../../images/Coffee.jpg'
 
 class Posts extends Component {
 
-  // constructor(props) {
-  //   this.id = props.id;
-  //   this.place = props.place;
-  //   this.description = props.description;
-  //   this.image = props.image;                    //user_id?
-  //   Post.all.push(this);
-  // }
-
   render() {
+    console.log(this.props.post.photo)
     return (
       <div>
           <div id="card">
@@ -23,7 +18,7 @@ class Posts extends Component {
             </div>
 
             <div className="card-body">
-              <h4 className="card-title"><strong>{this.props.post.place}</strong></h4>
+              <h4 className="card-title"><strong>{this.props.address}</strong></h4>
               <p className="card-text">{this.props.post.description}
               </p>
               <button data-id={this.props.post.id}>edit</button>
@@ -35,4 +30,12 @@ class Posts extends Component {
 
 }
 
-export default Posts;
+function mapStateToProps(state) {             //totally needed????
+  return {
+    address: state.address
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////
+
+export default connect(mapStateToProps)(Posts);

@@ -7,7 +7,7 @@ class FormContainer extends Component {
   render() {
     return (
       <div id='createPostsContainer'>
-        <CreateForm />
+        <CreateForm />   
       </div>
     )
   }

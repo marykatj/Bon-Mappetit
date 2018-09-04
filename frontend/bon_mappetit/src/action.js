@@ -26,6 +26,10 @@ export function userCoordinatesAction(coord) {
   return { type: 'COORD_CHANGE', coord: coord }
 }
 
+export function createAddressAction(address) {
+  return { type: 'CREATE_ADDRESS', address: address }
+}
+
 
   // export function fetchPostsAction(data) {
   //   return { type: 'FETCH_ALL_DATA', allPosts: data}
