@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import UserInfo from './UserInfo';
 import UserPosts from './UserPosts';
 import UserMap from './UserMap';
+import LocationSearchInput from '../Umbrella/LocationSearchInput';
 
 
 // const railsAPI = 'http://localhost:3000/api/v1/posts'
@@ -29,6 +30,7 @@ class UserPage extends Component {
     return (
         <div>
         {this.filterUserPosts()}
+          <LocationSearchInput />
           <UserInfo />
           <UserPosts />
           <UserMap />

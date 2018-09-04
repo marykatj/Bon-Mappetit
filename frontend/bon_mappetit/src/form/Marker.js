@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { Marker } from 'google-maps-react';
 
-class MapsMarker extends Component {
+class Marker extends Component {
 
   render() {
     return (
       <div>
+        Marker
       </div>
     )
   }

@@ -177,11 +177,30 @@
   position: absolute;
 }
 
-#autocomplete {
+.location-search-input {
   height: 50px;
   width: 630px;
   padding-left: 50%;
   float: right;
   z-index: 10;
   position: absolute;
+}
+
+/*///////////////////////////////////////////////////////////////////*/
+
+.currentIcon {
+  width: 20px;
+  height: 34px;
+  margin: 4px;
+  color: red;
+  z-index: 10;
+
+}
+
+.allIcons {
+  width: 20px;
+  height: 34px;
+  margin: 4px;
+  color: blue;
+  z-index: 10;
 }

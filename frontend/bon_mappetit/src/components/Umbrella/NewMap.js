@@ -3,16 +3,12 @@ import GoogleMapReact from 'google-map-react';
 import { Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
-const Marker = () => <Icon name='marker' size='big' color='red'/>
+//InforBox
+
+const Marker = () => <Icon name='marker' size='big' color='red' id="currentIcon"/>
 
 class NewMap extends Component {
 
-  static defaultProps = {
-    center: {
-      lat: 59.95,
-      lng: 30.33
-    }
-  };
 
   render() {
     return (
@@ -21,13 +17,22 @@ class NewMap extends Component {
           bootstrapURLKeys={{ key: 'AIzaSyD8eyGeIVO1m-lMAwJ21o3qiUPRiuFV_ck' }}
           center={[this.props.coord.lat, this.props.coord.lng]}
           defaultZoom={14} >
-          <Marker
-            lat={this.props.coord.lat}
-            lng={this.props.coord.lng} />
+          {this.createMarkers()}
         </GoogleMapReact>
       </div>
     );
   }
+
+///////////////////////////////////////////////////////////////////////////////
+
+  createMarkers = () => {
+    console.log(this.props.coord.lat)
+    // console.log(this.props.allPlaces)   //need the place information from the allPlaces Array.  Once defined with user posts, then markers will have assignments,
+    //return this.props.allPlaces.map(location => <Marker onClick={this.onMarkerClick} onMouseover={this.onMouseoverMarker} name={location.place} position={{lat: 40.7053, lng: -74.0140}} />)
+    return <Marker lat={this.props.coord.lat} lng={this.props.coord.lng} onClick={this.onMarkerClick} onMouseover={this.onMouseoverMarker} name={"Current Location"} position={{lat: 40.7053, lng: -74.0140}} />
+  }
+
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////
