@@ -37,7 +37,7 @@ inputChange = (event) => {
   })
 }
 
-photoChange = () => {
+photoChange = () => {                       // https://davidwalsh.name/fakepath
   const parsedPath = document.getElementById('photo').files[0].name         //both these improve the file path.
   //const parsedPath = event.target.value.replace("C:\\fakepath\\", "");
   console.log(parsedPath)
@@ -59,7 +59,7 @@ photoChange = () => {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-function mapStateToProps(state) {      
+function mapStateToProps(state) {
   return {
     allUserLocations: state.allUserLocations,
     allPlaces: state.allPlaces,

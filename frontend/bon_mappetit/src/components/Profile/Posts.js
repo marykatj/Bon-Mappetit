@@ -6,12 +6,14 @@ class Posts extends Component {
 
   render() {
     console.log(this.props.post.photo)
+    const imagePath = `chrome-extension://oahagehaecaffokbpkdmhdikdkjmimlg/${this.props.post.photo}`
+
     return (
       <div>
           <div id="card">
 
             <div>
-              <img className="card-image-left" src={this.props.post.photo} alt=""/>
+              <img className="card-image-left" src={imagePath} alt=""/>
               <a>
                 <div></div>
               </a>
