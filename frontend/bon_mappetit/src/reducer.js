@@ -6,7 +6,7 @@ const initialState = {
 
   currentBrowserLocation: {},
   mapWindowArea: {},
-  coord: { lat: 59.955413, lng: 30.337844 },   //revise to make browser's current location
+  coord: { lat: 40.7053, lng: -74.0140 },   //revise to make browser's current location
 
   userSearch: '',
   exploreSearch: '',
