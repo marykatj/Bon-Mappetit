@@ -21,7 +21,6 @@ class NewMap extends Component {
 ///////////////////////////////////////////////////////////////////////////////
 
   createAllMarkers = () => {
-    console.log(this.props.allPlaces)
       return this.props.allPlaces.map( place => <MapsMarker lat={place.lat} lng={place.lng} key={place} place={place} />)
    }
 }

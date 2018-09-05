@@ -5,7 +5,6 @@ const initialState = {
   allPlaces: [],
 
   currentBrowserLocation: {},
-  mapWindowArea: {},
   coord: { lat: 40.7053, lng: -74.0140 },   //revise to make browser's current location
   address: '',
 
@@ -13,8 +12,6 @@ const initialState = {
   userMarkers: [],
 
   userSearch: '',
-  exploreSearch: '',
-  createSearch: '',
 
   currentPage: 'explore'
 }
@@ -27,8 +24,9 @@ export default function reducer(state = initialState, action) {
     case SHARE:
       let userPostArray = state.allUserLocations
       userPostArray.push(action.newPost)
-      let allPostsArray = state.allPlaces  
+      let allPostsArray = state.allPlaces
       allPostsArray.push(action.newPost)
+      console.log(allPostsArray)
       return {...state, allUserLocations: userPostArray, allPlaces: allPostsArray}
     case USER_SEARCH:
       return {...state, userSearch: action.term}

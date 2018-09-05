@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//import coffee from '../../images/Coffee.jpg'
 
 class Posts extends Component {
 
@@ -18,15 +17,16 @@ class Posts extends Component {
             </div>
 
             <div className="card-body">
-              <h4 className="card-title"><strong>{this.props.post.address}</strong></h4>
+              <h4 className="card-title"><strong>{this.props.location}</strong></h4>
               <p className="card-text">{this.props.post.description}
               </p>
-              <button data-id={this.props.post.id}>edit</button>
             </div>
           </div>
       </div>
     );
   }
+
+// <button data-id={this.props.post.id}>edit</button>
 
 }
 

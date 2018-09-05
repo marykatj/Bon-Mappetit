@@ -7,7 +7,6 @@ import ExplorePage from '../Explore/ExplorePage';
 class CreateForm extends Component {
 
   state = {
-    address: this.props.address,
     description: '',
     photo: '',
     lat: this.props.coord.lat,
@@ -18,7 +17,7 @@ class CreateForm extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit} >
-          <input type="text" id="place" value={this.props.address} onChange={this.inputChange}/>
+          <input type="text" id="location" value={this.props.address} onChange={this.inputChange}/>
           <textarea id="description" value={this.state.description} onChange={this.inputChange}/>
           <div className="button-row">
           <input name="image" type="file" accept="image/*" id="photo" onChange={this.photoChange}/>
@@ -35,7 +34,7 @@ class CreateForm extends Component {
 
 inputChange = (event) => {
   this.setState({
-      [event.target.id]: event.target.value,
+    [event.target.id]: event.target.value       ///???????????????????????
   })
 }
 
@@ -49,15 +48,14 @@ photoChange = () => {                       // https://davidwalsh.name/fakepath
 }
 
   handleSubmit = (event) => {
-    this.props.changePage(event.target.href)
-    this.props.createPost(this.state)
+    this.props.createPost(this.state)           // address not being recorded in state.
     this.setState({
-        address: this.state.address,
         description: '',
         photo: '',
         lat: this.props.coord.lat,
         lng: this.props.coord.lng
     })
+   this.props.changePage(event.target.href)
   }
 };
 

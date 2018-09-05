@@ -42,23 +42,18 @@ const tileStyle = {
 class MapsMarker extends Component {
 
   state = {
-    currentIcon: {},    //do i even need this?
-    name: '',
     clicked: false,
   }
 
   markerClick = () => {
     this.setState({
-      currentIcon: this.props.place,
-      clicked: true,
-      name: this.props.address
+      clicked: true
     })
   }
 
   unClick = () => {
     this.setState({
-      clicked: false,
-      name: ''
+      clicked: false
     })
   }
 
@@ -70,7 +65,7 @@ class MapsMarker extends Component {
         <img className='currentIcon' src={pin} alt='' style={markerStyle}/>
         <div>
           <img src={this.props.place.photo} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
-          {this.state.clicked === true ? (<p style={tileStyle}> {this.props.place.address} </p>) : null }
+          {this.state.clicked === true ? (<p style={tileStyle}> {this.props.address} </p>) : null }
         </div>
       </div>
     )

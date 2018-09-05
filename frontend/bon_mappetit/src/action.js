@@ -15,7 +15,7 @@ export function changePageAction(urlPath) {
 }
 
 export function createPostAction(post) {
-  return { type: 'SHARE', newPost: post}  
+  return { type: 'SHARE', newPost: post}
   }
 
 export function userSearchAction(term) {

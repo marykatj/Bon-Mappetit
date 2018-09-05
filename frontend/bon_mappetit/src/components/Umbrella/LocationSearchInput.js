@@ -5,14 +5,11 @@ import { userCoordinatesAction, createAddressAction } from '../../action'
 
 class LocationSearchInput extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
+state = {
       address: ''
-   };
   }
 
-  handleChange = address => {
+  handleChange = (address) => {
     this.setState({ address });
   };
 
@@ -20,7 +17,7 @@ class LocationSearchInput extends Component {
     this.props.createAddress(address)
     geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
-      .then(latLng => this.props.userCoordinates(latLng));  //need to attach coordinates to post. Address is attached somehow.
+      .then(latLng => this.props.userCoordinates(latLng));
   };
 
 
