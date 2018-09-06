@@ -13,11 +13,11 @@ import ExplorePage from './components/Explore/ExplorePage';
 
 class App extends Component {
 
-  componentDidMount() {
-    fetch(postsAPI)
-      .then(response  => response.json())
-      .then(data => this.props.fetchPosts(data));
-    };
+  // componentDidMount() {
+  //   fetch(postsAPI)
+  //     .then(response  => response.json())
+  //     .then(data => this.props.fetchPosts(data));
+  //   };
 
   // fetch(usersAPI)
   //   .then(response  => response.json())
