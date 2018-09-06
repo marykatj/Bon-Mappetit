@@ -26,7 +26,7 @@ class NavBar extends Component {
     return (
       <div className="App-header">
         <header >
-          <img className="Header-image" alt=""/>
+          <img className="Header-image" alt="" />
             <h1 className="App-title">Bon Mappétit</h1>
               <p className="App-slogan">
                 indulge a little.

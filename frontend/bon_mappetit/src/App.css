@@ -19,7 +19,6 @@
 
 .Header-image {
   background-image: url("./images/Coffee.jpg");
-  height: 100%;
   background-position: center;
   background-size: cover;
   transform: rotate(90deg);

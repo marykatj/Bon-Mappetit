@@ -9,7 +9,8 @@ const markerStyle = {
   position: "absolute",
   width: "15px",
   height: "15px",
-  transform: "translate(-50%, -100%)"
+  transform: "translate(-50%, -100%)",
+  zIndex: '1000'
 }
 
 const pictureStyle = {
