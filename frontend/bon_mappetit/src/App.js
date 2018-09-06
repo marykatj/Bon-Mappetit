@@ -14,8 +14,7 @@ import ExplorePage from './components/Explore/ExplorePage';
 class App extends Component {
 
   // componentDidMount() {
-  //   fetch(postsAPI)
-  //     .then(response  => response.json())
+  //   fetch(postsAPI).then(response  => response.json())
   //     .then(data => this.props.fetchPosts(data));
   //   };
 

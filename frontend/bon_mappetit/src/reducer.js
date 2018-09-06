@@ -23,6 +23,12 @@ export default function reducer(state = initialState, action) {
       return {...state, currentPage: action.currentPage}
 
     case SHARE:
+      const railsImage = action.newPost.image_url
+      const midImage = railsImage.replace("/rails/active_storage/blobs", "chrome-extension://oahagehaecaffokbpkdmhdikdkjmimlg");
+      const reactImage = midImage.replace("?disposition=attachment", "");
+      action.newPost.image_url = [reactImage]
+
+      console.log(action.newPost)
       let userPostArray = state.allUserLocations
       userPostArray.push(action.newPost)
       let allPostsArray = state.allPlaces

@@ -16,7 +16,7 @@ class CreateForm extends Component {
 
   state = {
     description: '',
-    image_file: '',
+    image_url: '',
     lat: this.props.coord.lat,
     lng: this.props.coord.lng,
   }
@@ -29,7 +29,7 @@ class CreateForm extends Component {
   formData.append('address', 'hello')
   formData.append('description', this.state.description)
   // let blob = new Blob([this.state.image_file], { type: 'img/jpg'});
-  formData.append('image_file', this.state.image_file)
+  formData.append('image_file', this.state.image_url)
   formData.append('lat', this.state.lat)
   formData.append('lng', this.state.lng)
   formData.append('user_id', 1)
@@ -77,7 +77,7 @@ photoChange = (event) => {                       // https://davidwalsh.name/fake
   //const parsedPath = event.target.value.replace("C:\\fakepath\\", "");
   const imagePath = `chrome-extension://oahagehaecaffokbpkdmhdikdkjmimlg/${parsedPath}`
   this.setState({
-    image_file: event.target.files[0]
+    image_url: event.target.files[0]
   })
 }
 
@@ -92,7 +92,7 @@ changePage = (event) => {
     //this.props.createPost(this.state)           // address not being recorded in state.
     this.setState({
         description: '',
-        image_file: '',
+        image_url: '',
         lat: this.props.coord.lat,
         lng: this.props.coord.lng
     })
@@ -122,19 +122,3 @@ function mapDispatchToProps(dispatch) {
 ////////////////////////////////////////////////////////////////////////////
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateForm);
-
-
-// headers: {
-//   'Content-Type': 'application/json',
-//   'Accept': 'application/json'
-// },
-// body: JSON.stringify({
-//   post: {
-//     address: 'hello',
-//     description: this.state.description,
-//     image_file: this.state.image_file,
-//     lat: this.state.lat,
-//     lng: this.state.lng,
-//     user_id: 1
-//   }
-// })

@@ -4,13 +4,14 @@ import { connect } from 'react-redux';
 class Posts extends Component {
 
   render() {
+    console.log(this.props.post.image_url)
 
     return (
       <div>
           <div id="card">
 
             <div>
-              <img className="card-image-left" src={this.props.post.image_file} alt=""/>
+              <img className="card-image-left" src={this.props.post.image_url} alt=""/>
               <a>
                 <div></div>
               </a>
