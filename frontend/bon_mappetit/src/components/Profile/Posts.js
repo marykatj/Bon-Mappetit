@@ -10,7 +10,7 @@ class Posts extends Component {
           <div id="card">
 
             <div>
-              <img className="card-image-left" src={this.props.post.photo} alt=""/>
+              <img className="card-image-left" src={this.props.post.image_file} alt=""/>
               <a>
                 <div></div>
               </a>

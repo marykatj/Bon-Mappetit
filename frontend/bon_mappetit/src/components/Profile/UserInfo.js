@@ -5,6 +5,13 @@ import ProfilePic from '../../images/ProfilePic.jpg'
 const avatarStyle = {
   width: "300px",
   height: "200px",
+  margin: "20px 0 0 20px",
+  borderRadius: '4px',
+  border: '4px solid black',
+}
+
+const userInfoStyle = {
+  margin: "20px 0 20px 20px",
 }
 
 class UserInfo extends Component {
@@ -13,9 +20,9 @@ class UserInfo extends Component {
     return (
         <div>
           <img src={ProfilePic} style={avatarStyle} alt=""/>
-          <h2> Welcome, Mary-Kate! </h2>
+          <h2 style={userInfoStyle}> Welcome, Mary-Kate! </h2>
           <UserSearch />
-          <h3> Boston </h3>
+          <h3 style={userInfoStyle}> Boston </h3>
         </div>
     );
   }

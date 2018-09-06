@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Bradley Hand, cursive;
+  font-family: Fantasy;
   background-color: grey;
+  overflow-x: hidden;
 }

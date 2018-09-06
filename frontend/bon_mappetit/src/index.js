@@ -18,6 +18,20 @@ registerServiceWorker();
 
 //////////////////////////////////////////////////////////////////////////////////
 
+// Rails backend written: need to connect with front end                    -- TODAY
+// Need user data to persist  --TODAY
+// Need Redux Auth implemented && User profile set up                       -- THUR/FRI
+// Map Markers: need to distinguish between User & All.  Mostly set up.     --THUR/FRI
+// css                                                                      --Sunday & Monday
+// FIX ADDRESSES & SEARCH BAR.
+
+// user profile with avatar
+// geolocation
+// carosuel photos
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
 // componentDidMount() {
 //   const config = {
 //     headers: {

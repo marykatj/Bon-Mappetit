@@ -30,22 +30,10 @@ export function createAddressAction(address) {
   return { type: 'CREATE_ADDRESS', address: address }
 }
 
-
-  // export function fetchPostsAction(data) {
-  //   return { type: 'FETCH_ALL_DATA', allPosts: data}
-  //   }
+export function fetchPostsAction(allPosts) {
+  return { type: 'FETCH_ALL_DATA', allPosts: allPosts}
+  }
   //
   //   export function userPostsAction(filteredPosts) {
   //     return { type: 'FILTER_JUST_USER_POSTS', userPosts: filteredPosts}
   //     }
-
-
-// export function fetchMapsAction() {
-//   AnimalAdapter.getMaps()
-//      .then(url => {
-//      dispatch(fetchMapsAction(url))})
-//      .then(() => {return {
-//         type: 'FETCHED_MAPS'
-//        }
-//      })
-//    }

@@ -3,6 +3,7 @@ import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-au
 import { connect } from 'react-redux';
 import { userCoordinatesAction, createAddressAction } from '../../action'
 
+
 class LocationSearchInput extends Component {
 
 state = {
@@ -31,7 +32,7 @@ state = {
 
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
           <div>
-            <input
+            <input 
               {...getInputProps({
                 placeholder: 'find...',
                 className: 'location-search-input',

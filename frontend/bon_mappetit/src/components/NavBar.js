@@ -8,11 +8,12 @@ import '../index.css'
 
 const linkStyle = {
     width: '200px',
-    padding: '12px',
+    padding: '12px 18px 12px 18px',
     margin: '0 6px 6px',
     background: '#6433E9',
     textDecoration: 'none',
-    color: 'white'
+    color: 'white',
+    borderRadius: '4px',
 }
 
 class NavBar extends Component {
@@ -30,9 +31,9 @@ class NavBar extends Component {
               <p className="App-slogan">
                 indulge a little.
               <span>
-                    <NavLink onClick={this.handleClick} activeClassName="active" to="/explore" style={linkStyle}> Explore </NavLink>
-      							<NavLink onClick={this.handleClick} activeClassName="active" to="/profile" style={linkStyle}> Profile </NavLink>
-      							<NavLink onClick={this.handleClick} activeClassName="active" to="/create" style={linkStyle}> Create </NavLink>
+      							<NavLink onClick={this.handleClick} activeClassName="active" to="/profile" style={linkStyle}> profile </NavLink>
+      							<NavLink onClick={this.handleClick} activeClassName="active" to="/create" style={linkStyle}> create </NavLink>
+                    <NavLink onClick={this.handleClick} activeClassName="active" to="/explore" style={linkStyle}> explore </NavLink>
       				</span>
               </p>
           </header>

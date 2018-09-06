@@ -2,7 +2,7 @@
   text-align: center;
   background-image: url('./images/Coffee.jpg');
   background-repeat: no-repeat;
-  height: 250px;
+  height: 350px;
 }
 
 .App-title {
@@ -27,15 +27,9 @@
 
 /*//////////////////////////////////////////////////////////////////////////*/
 
-/* .App-body {
-  font-family: Bradley Hand, cursive;
-} */
-
-.button {
-  width: 200px;
-  padding: 12px;
-  background: #6433E9;
-  color: white;
+.active {
+    background-color: #4CAF50;
+    color: white;
 }
 
 /*////SCROLL BAR///////////////////////////////////////////////////////////////////////*/
@@ -65,7 +59,7 @@
 #userPostsContainer {
   float: right;
   width: 50%;
-  height: 650px;
+  height: 636px;
   background-color: #666699;
   text-align: center;
   overflow-y: scroll;
@@ -74,10 +68,19 @@
 
 .User-search {
   float: right;
-  width: 100px;
+  width: 150px;
   height: 20px;
-  padding-right: 250px;
+  margin-right: 400px;
+  padding-bottom: 20px;
+}
 
+#search-bar {
+  width: 445px;
+  height: 40px;
+  border-radius: 4px;
+  border: 2px solid black;
+  margin-right: 300px;
+  text-align: center;
 }
 
 /*/////POST CARDS///////////////////////////////////////////////////////////////////////*/
@@ -109,7 +112,7 @@
   background-color: #666699;
   text-align: center;
   padding-top: 100px;
-  height: 650px;
+  height: 535px;
 }
 
 #postForm {
@@ -127,14 +130,39 @@
 }
 
 #location {
-  width: 300px;
-  height: 20px;
+  width: 500px;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+#location:focus {
+  border: 3px solid #6433E9;
 }
 
 #description {
-  width: 300px;
+  margin-top: 60px;
+  width: 500px;
   height: 50px;
+  border-radius: 4px;
+  background-color: #D3D3D3;
+  border: 2px solid black;
 }
+
+#description:focus {
+  border: 3px solid #6433E9;
+  text-align: center;
+}
+
+.upload-button {
+  margin-top: 40px;
+  padding: 12px 135px 12px 135px;
+  background-color: #6433E9;
+  color: white;
+  border-radius: 4px;
+}
+
+/*/MAPS////////////////////////////////////////////////////////////////////////////*/
 
 #mapContainer{
   width: 50%;
@@ -162,6 +190,8 @@
   width: 100%
 }
 
+/*GOOGLE PLACES SEARCH BAR///////////////////////////////////////////////////*/
+
 .suggestion {
   background-color: #f1f1f1;
   color: gray;
@@ -178,15 +208,15 @@
 }
 
 .location-search-input {
-  height: 50px;
+  height: 20px;
   width: 630px;
   padding-left: 50%;
   float: right;
-  z-index: 10;
+  z-index: 1000;
   position: absolute;
 }
 
-/*///////////////////////////////////////////////////////////////////*/
+/*//MAP MARKERS///////////////////////////////////////////////////////////*/
 
 #currentIcon {
   width: 5px;

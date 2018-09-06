@@ -21,27 +21,33 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case NAVIGATION_CLICK:
       return {...state, currentPage: action.currentPage}
+
     case SHARE:
       let userPostArray = state.allUserLocations
       userPostArray.push(action.newPost)
       let allPostsArray = state.allPlaces
       allPostsArray.push(action.newPost)
-      console.log(allPostsArray)
       return {...state, allUserLocations: userPostArray, allPlaces: allPostsArray}
+
     case USER_SEARCH:
       return {...state, userSearch: action.term}
+
     case COORD_CHANGE:
       let userMarkersArray = state.userMarkers
       userMarkersArray.push(action.coord)
       let allMarkersArray = state.allMarkers
       allMarkersArray.push(action.coord)
       return {...state, coord: action.coord, allMarkers: allMarkersArray, userMarkers: userMarkersArray}
+
     case CREATE_ADDRESS:
       return {...state, address: action.address}
-    // case FETCH_All_DATA:
+
+    // case FETCH_ALL_DATA:
     //   return {...state, allPlaces: action.allPosts}
+
     case FILTER_JUST_USER_POSTS:
       return {...state, allUserLocations: action.userPosts};
+
     default: return state;
   }
 

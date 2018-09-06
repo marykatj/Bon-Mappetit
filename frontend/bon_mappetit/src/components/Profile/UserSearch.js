@@ -12,7 +12,7 @@ handleChange = (event) => {
       return (
         <div className="User-search">
           <form id="search-form">
-            <input id="search-bar" type='input' placeholder='Find your places...' value={this.props.search} onChange={this.handleChange}/>
+            <input id="search-bar" type='input' placeholder='search your places...' value={this.props.search} onChange={this.handleChange}/>
       </form>
     </div>
       )

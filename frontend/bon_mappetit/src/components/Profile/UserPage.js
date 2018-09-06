@@ -30,8 +30,8 @@ class UserPage extends Component {
     return (
         <div>
         {this.filterUserPosts()}
-          <LocationSearchInput />
           <UserInfo />
+          <LocationSearchInput />
           <UserPosts />
           <UserMap />
         </div>

@@ -64,7 +64,7 @@ class MapsMarker extends Component {
       <div>
         <img className='currentIcon' src={pin} alt='' style={markerStyle}/>
         <div>
-          <img src={this.props.place.photo} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
+          <img src={this.props.place.image_file} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
           {this.state.clicked === true ? (<p style={tileStyle}> {this.props.address} </p>) : null }
         </div>
       </div>
