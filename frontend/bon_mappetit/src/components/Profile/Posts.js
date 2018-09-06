@@ -4,7 +4,12 @@ import { connect } from 'react-redux';
 class Posts extends Component {
 
   render() {
-    console.log(this.props.post.image_url)
+    // console.log(this.props.post.image_url)
+    // const railsImage = this.props.post.image_url
+    // const midImage = railsImage.replace("/rails/active_storage/blobs", "chrome-extension://oahagehaecaffokbpkdmhdikdkjmimlg");
+    // const reactImage = midImage.replace("?disposition=attachment", "");
+    // this.props.post.image_url = [reactImage]
+    // console.log(this.props.post)
 
     return (
       <div>
