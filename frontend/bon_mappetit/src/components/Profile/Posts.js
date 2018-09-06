@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 class Posts extends Component {
 
+// this.props.post.image_url
+
   render() {
     // console.log(this.props.post.image_url)
     // const railsImage = this.props.post.image_url
@@ -10,6 +12,11 @@ class Posts extends Component {
     // const reactImage = midImage.replace("?disposition=attachment", "");
     // this.props.post.image_url = [reactImage]
     // console.log(this.props.post)
+
+    // 'chrome-extension://oahagehaecaffokbpkdmhdikdkjmimlg/14525080_10153805881462611_7474519788260237313_o.jpg'
+    // 'chrome-extension://oahagehaecaffokbpkdmhdikdkjmimlg/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBTQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--dad312e92a748f9faf620e5a0e2fa4191ddf5244/14525080_10153805881462611_7474519788260237313_o.jpg'
+
+    // const actualImage = this.props.post.image_url.replace("eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBTQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--dad312e92a748f9faf620e5a0e2fa4191ddf5244/", "")
 
     return (
       <div>

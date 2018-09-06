@@ -16,6 +16,10 @@ const initialState = {
   currentPage: 'explore'
 }
 
+
+// const midImage = railsImage.replace("/rails/active_storage/blobs/", "chrome-extension://oahagehaecaffokbpkdmhdikdkjmimlg/");
+// const reactImage = midImage.replace("?disposition=attachment", "");
+// const oneImage = reactImage.split('/').remove[2]
 export default function reducer(state = initialState, action) {
 
   switch (action.type) {
@@ -23,10 +27,12 @@ export default function reducer(state = initialState, action) {
       return {...state, currentPage: action.currentPage}
 
     case SHARE:
-      const railsImage = action.newPost.image_url
-      const midImage = railsImage.replace("/rails/active_storage/blobs", "chrome-extension://oahagehaecaffokbpkdmhdikdkjmimlg");
-      const reactImage = midImage.replace("?disposition=attachment", "");
-      action.newPost.image_url = `${reactImage}`
+      // const railsImage = action.newPost.image_url
+      // console.log('railsImage' ,railsImage);
+      // const midImage = railsImage.replace("/rails/active_storage/blobs/", "chrome-extension://oahagehaecaffokbpkdmhdikdkjmimlg/");
+      // const reactImage = midImage.replace("?disposition=attachment", "");
+
+      // action.newPost.image_url = `${reactImage}`
 
       console.log(action.newPost)
       let userPostArray = state.allUserLocations
