@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { connect } from 'react-redux';
 import MapsMarker from './MapsMarker'
+import uuid  from 'uuid'
 
 class NewMap extends Component {
 
@@ -18,10 +19,11 @@ class NewMap extends Component {
     );
   }
 
+
 ///////////////////////////////////////////////////////////////////////////////
 
   createAllMarkers = () => {
-      return this.props.allPlaces.map( place => <MapsMarker lat={place.lat} lng={place.lng} key={place} place={place} />)
+      return this.props.allPlaces.map( place => <MapsMarker lat={place.lat} lng={place.lng} key={uuid()} place={place} />)
    }
 }
 

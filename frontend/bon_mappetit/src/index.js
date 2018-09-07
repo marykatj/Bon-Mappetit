@@ -24,6 +24,8 @@ registerServiceWorker();
 // Map Markers: need to distinguish between User & All.  Mostly set up.     --THUR/FRI
 // css                                                                      --Sunday & Monday
 // FIX ADDRESSES & SEARCH BAR.
+//search bar actually autocompletes.
+// savor move.
 
 // user profile with avatar
 // geolocation

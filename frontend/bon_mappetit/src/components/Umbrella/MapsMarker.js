@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
 import pin from '../../images/logo.png'
-//import tempImage from '../../images/Coffee.jpg'
+import tempImage from '../../images/Coffee.jpg'
 
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -10,14 +9,14 @@ const markerStyle = {
   width: "15px",
   height: "15px",
   transform: "translate(-50%, -100%)",
-  zIndex: '1000'
+  // zIndex: '1000'
 }
 
 const pictureStyle = {
   position: "absolute",
   width: "90px",
   transform: "translate(-50%, -100%)",
-  borderRadius: '8px',
+  borderRadius: '8px'
   // maxWidth: '100%',
   // height: 'auto',
 }
@@ -58,29 +57,27 @@ class MapsMarker extends Component {
     })
   }
 
+  //this.props.place.image_url
+
+  // <div>
+  //   <img src={tempImage} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
+  //   {this.state.clicked === true ? (<p style={tileStyle}> {this.props.place.address} </p>) : null }
+  // </div>
+
 ////////////////////////////////////////////////////////////////////////////////
 
   render() {
+    console.log(this.props.place.address)
+      console.log(this.props.place.image_url)
     return (
       <div>
         <img className='currentIcon' src={pin} alt='' style={markerStyle}/>
-        <div>
-          <img src={this.props.place.image_file} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
-          {this.state.clicked === true ? (<p style={tileStyle}> {this.props.address} </p>) : null }
-        </div>
       </div>
     )
   }
 
 }
-/////////////////////////////////////////////////////////////////////////////
-
-function mapStateToProps(state) {
-  return {
-    address: state.address
-  }
-}
 
 ////////////////////////////////////////////////////////////////////////////
 
-export default connect(mapStateToProps)(MapsMarker);
+export default MapsMarker;

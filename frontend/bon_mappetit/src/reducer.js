@@ -16,10 +16,6 @@ const initialState = {
   currentPage: 'explore'
 }
 
-
-// const midImage = railsImage.replace("/rails/active_storage/blobs/", "chrome-extension://oahagehaecaffokbpkdmhdikdkjmimlg/");
-// const reactImage = midImage.replace("?disposition=attachment", "");
-// const oneImage = reactImage.split('/').remove[2]
 export default function reducer(state = initialState, action) {
 
   switch (action.type) {
@@ -34,12 +30,12 @@ export default function reducer(state = initialState, action) {
 
       // action.newPost.image_url = `${reactImage}`
 
-      console.log(action.newPost)
-      let userPostArray = state.allUserLocations
-      userPostArray.push(action.newPost)
-      let allPostsArray = state.allPlaces
-      allPostsArray.push(action.newPost)
-      return {...state, allUserLocations: userPostArray, allPlaces: allPostsArray}
+      // console.log(action.newPost)
+      // let userPostArray = state.allUserLocations
+      // userPostArray.push(action.newPost)
+      // let allPostsArray = state.allPlaces
+      // allPostsArray.push(action.newPost)
+      // return {...state, allUserLocations: userPostArray, allPlaces: allPostsArray}
 
     case USER_SEARCH:
       return {...state, userSearch: action.term}
@@ -54,8 +50,10 @@ export default function reducer(state = initialState, action) {
     case CREATE_ADDRESS:
       return {...state, address: action.address}
 
-    // case FETCH_ALL_DATA:
-    //   return {...state, allPlaces: action.allPosts}
+    case FETCH_ALL_DATA:
+      console.log("reducer")
+      console.log(action.allPosts)
+      return {...state, allPlaces: action.allPosts, allUserLocations: action.allPosts}
 
     case FILTER_JUST_USER_POSTS:
       return {...state, allUserLocations: action.userPosts};

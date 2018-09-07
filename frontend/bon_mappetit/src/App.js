@@ -13,10 +13,14 @@ import ExplorePage from './components/Explore/ExplorePage';
 
 class App extends Component {
 
-  // componentDidMount() {
-  //   fetch(postsAPI).then(response  => response.json())
-  //     .then(data => this.props.fetchPosts(data));
-  //   };
+  //make fetch requests work, and cooperate with allPlaces.  Then get images to render on map.
+  //then start Redux Auth.
+  // also backend is having an error.
+
+  componentDidMount() {
+    fetch(postsAPI).then(response  => response.json())
+      .then(data => this.props.fetchPosts(data));
+    };
 
   // fetch(usersAPI)
   //   .then(response  => response.json())

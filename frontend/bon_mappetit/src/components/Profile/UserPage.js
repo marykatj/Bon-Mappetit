@@ -29,6 +29,7 @@ class UserPage extends Component {
   render() {
     return (
         <div>
+        <h2 id="user-savor"> savor. </h2>
         {this.filterUserPosts()}
           <UserInfo />
           <LocationSearchInput />

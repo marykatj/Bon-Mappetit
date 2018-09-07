@@ -25,23 +25,29 @@ class CreateForm extends Component {
 
   setPost = () => {
 
-  let formData = new FormData();
-  formData.append('address', 'hello')
-  formData.append('description', this.state.description)
-  // let blob = new Blob([this.state.image_file], { type: 'img/jpg'});
-  formData.append('image_file', this.state.image_url)
-  formData.append('lat', this.state.lat)
-  formData.append('lng', this.state.lng)
-  formData.append('user_id', 1)
+    let formData = new FormData();
+    formData.append('address', this.props.address)
+    formData.append('description', this.state.description)
+    formData.append('image_file', this.state.image_url)
+    formData.append('lat', this.state.lat)
+    formData.append('lng', this.state.lng)
+    formData.append('user_id', 1)
 
-  const config = {
-    method:'POST',
-    body: formData
-  }
+    console.log(formData.get("address"))
+    console.log(formData.get("description"))
+    console.log(formData.get("image_file"))
+    console.log(formData.get("lat"))
+    console.log(formData.get("lng"))
+    console.log(formData.get("user_id"))
+
+    const config = {
+      method:'POST',
+      body: formData,
+    }
 
   fetch('http://localhost:3000/api/v1/posts/', config)
     .then(response => response.json())
-    .then(data => this.props.createPost(data))
+    .then(data => {this.props.createPost(data)})
 }
 
 /////////////////////////////////////////////////////////////////////////////////
