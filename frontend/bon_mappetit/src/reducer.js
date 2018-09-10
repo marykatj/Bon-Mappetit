@@ -1,4 +1,4 @@
-import { NAVIGATION_CLICK, SHARE, USER_SEARCH, FETCH_ALL_DATA, FILTER_JUST_USER_POSTS, COORD_CHANGE, CREATE_ADDRESS } from './types'
+import { NAVIGATION_CLICK, SHARE, USER_SEARCH, FETCH_ALL_DATA, FILTER_JUST_USER_POSTS, COORD_CHANGE, CREATE_ADDRESS, NEW_MARKER, FETCH_MARKERS, POST_SUBMIT, POST_UNSUBMIT } from './types'
 
 const initialState = {
   allUserLocations: [],
@@ -27,7 +27,11 @@ export default function reducer(state = initialState, action) {
       userPostArray.push(action.newPost)
       let allPostsArray = state.allPlaces
       allPostsArray.push(action.newPost)
-      return {...state, allUserLocations: userPostArray, allPlaces: allPostsArray}
+      let allMarkersA = state.allMarkers
+      allMarkersA.push(action.newPost)
+      let userMarkersA = state.userMarkers
+      userMarkersA.push(action.newPost)
+      return {...state, allUserLocations: userPostArray, allPlaces: allPostsArray, userMarkers: allMarkersA, allMarkers: userMarkersA}
 
     case USER_SEARCH:
       return {...state, userSearch: action.term}
@@ -43,7 +47,10 @@ export default function reducer(state = initialState, action) {
       return {...state, address: action.address}
 
     case FETCH_ALL_DATA:
-      return {...state, allPlaces: action.allPosts, allUserLocations: action.allPosts}
+      return {...state, allPlaces: action.allPosts, allUserLocations: action.allPosts, allMarkers: action.allPosts, userMarkers: action.allPosts}
+
+    // case FETCH_MARKERS:
+    //   return {...state, allMarkers: action.allMarkers, userMarkers: action.allMarkers}
 
     case FILTER_JUST_USER_POSTS:
       return {...state, allUserLocations: action.userPosts};

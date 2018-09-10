@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+import { connect } from 'react-redux';
+import ImageLoader from 'react-image-file'
 import pin from '../../images/logo.png'
 import tempImage from '../../images/Coffee.jpg'
 
@@ -9,7 +11,6 @@ const markerStyle = {
   width: "15px",
   height: "15px",
   transform: "translate(-50%, -100%)",
-  // zIndex: '1000'
 }
 
 const pictureStyle = {
@@ -17,8 +18,6 @@ const pictureStyle = {
   width: "90px",
   transform: "translate(-50%, -100%)",
   borderRadius: '8px'
-  // maxWidth: '100%',
-  // height: 'auto',
 }
 
 const tileStyle = {
@@ -31,18 +30,12 @@ const tileStyle = {
   boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
 }
 
-//Need to style the tile.  also insert 'hover' attributes
-
-// .pigTile:hover {
-//   transform: scale(1.05);
-// }
-
 ////////////////////////////////////////////////////////////////////////////////
 
 class MapsMarker extends Component {
 
   state = {
-    clicked: false,
+    clicked: false
   }
 
   markerClick = () => {
@@ -57,27 +50,36 @@ class MapsMarker extends Component {
     })
   }
 
-  //this.props.place.image_url
+imageRender = () => {
 
-
+  return(
+          <React.Fragment>
+            <img src={this.props.place.image_url} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
+            {this.state.clicked === true ? (<p style={tileStyle}> {this.props.place.address} </p>) : null }
+          </React.Fragment>
+  )}
 
 ////////////////////////////////////////////////////////////////////////////////
 
   render() {
-    console.log(this.props.place)
     return (
       <div>
-        <img className='currentIcon' src={pin} alt='' style={markerStyle}/>
-        <div>
-          <img src={tempImage} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
-          {this.state.clicked === true ? (<p style={tileStyle}> {this.props.place.address} </p>) : null }
-        </div>
+          <img className='currentIcon' src={pin} alt='' style={markerStyle} />
       </div>
-    )
+    )}
+
   }
 
+//{ this.props.currentPage === 'profile' ? this.imageRender : null }
+/////////////////////////////////////////////////////////////////////////////
+
+function mapStateToProps(state) {
+  return {
+    currentPage: state.currentPage
+  }
 }
 
-////////////////////////////////////////////////////////////////////////////
+export default connect(mapStateToProps)(MapsMarker);
 
-export default MapsMarker;
+
+////////////////////////////////////////////////////////////////////////////

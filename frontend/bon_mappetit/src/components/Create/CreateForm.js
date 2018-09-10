@@ -33,13 +33,6 @@ class CreateForm extends Component {
     formData.append('lng', this.state.lng)
     formData.append('user_id', 1)
 
-    console.log(formData.get("address"))
-    console.log(formData.get("description"))
-    console.log(formData.get("image_file"))
-    console.log(formData.get("lat"))
-    console.log(formData.get("lng"))
-    console.log(formData.get("user_id"))
-
     const config = {
       method:'POST',
       body: formData,
@@ -48,9 +41,10 @@ class CreateForm extends Component {
   fetch('http://localhost:3000/api/v1/posts/', config)
     .then(response => response.json())
     .then(data => {this.props.createPost(data)})
+
 }
 
-/////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
   render() {
     return (
@@ -74,11 +68,11 @@ class CreateForm extends Component {
 
 inputChange = (event) => {
   this.setState({
-    [event.target.id]: event.target.value       ///???????????????????????
+    [event.target.id]: event.target.value
   })
 }
 
-photoChange = (event) => {                       // https://davidwalsh.name/fakepath
+photoChange = (event) => {
   const parsedPath = document.getElementById('photo').files[0].name         //both these improve the file path.
   //const parsedPath = event.target.value.replace("C:\\fakepath\\", "");
   const imagePath = `chrome-extension://oahagehaecaffokbpkdmhdikdkjmimlg/${parsedPath}`
@@ -91,11 +85,9 @@ changePage = (event) => {
   this.props.changePage(event.target.href)
 }
 
-
   handleSubmit = (event) => {
     event.preventDefault();
     this.setPost();
-    //this.props.createPost(this.state)           // address not being recorded in state.
     this.setState({
         description: '',
         image_url: '',
