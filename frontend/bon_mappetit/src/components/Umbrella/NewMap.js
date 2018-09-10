@@ -23,7 +23,9 @@ class NewMap extends Component {
 ///////////////////////////////////////////////////////////////////////////////
 
   createAllMarkers = () => {
-      return this.props.allPlaces.map( place => <MapsMarker lat={place.lat} lng={place.lng} key={uuid()} place={place} />)
+    return this.props.allMarkers.map( place => <MapsMarker lat={place.lat} lng={place.lng} key={uuid()} />)
+      //return this.props.allPlaces.map( place => <MapsMarker lat={place.lat} lng={place.lng} key={uuid()} place={place} />)
+      //need to persist this data to backend
    }
 }
 

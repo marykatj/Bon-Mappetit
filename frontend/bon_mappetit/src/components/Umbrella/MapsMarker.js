@@ -59,19 +59,19 @@ class MapsMarker extends Component {
 
   //this.props.place.image_url
 
-  // <div>
-  //   <img src={tempImage} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
-  //   {this.state.clicked === true ? (<p style={tileStyle}> {this.props.place.address} </p>) : null }
-  // </div>
+
 
 ////////////////////////////////////////////////////////////////////////////////
 
   render() {
-    console.log(this.props.place.address)
-      console.log(this.props.place.image_url)
+    console.log(this.props.place)
     return (
       <div>
         <img className='currentIcon' src={pin} alt='' style={markerStyle}/>
+        <div>
+          <img src={tempImage} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
+          {this.state.clicked === true ? (<p style={tileStyle}> {this.props.place.address} </p>) : null }
+        </div>
       </div>
     )
   }

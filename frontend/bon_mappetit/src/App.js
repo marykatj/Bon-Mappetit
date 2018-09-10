@@ -8,14 +8,10 @@ import UserPage from './components/Profile/UserPage';
 import CreatePage from './components/Create/CreatePage';
 import ExplorePage from './components/Explore/ExplorePage';
 
-  const postsAPI = 'http://localhost:3000/api/v1/posts';
-  //const usersAPI = 'http://localhost:3000/api/v1/users';
+const postsAPI = 'http://localhost:3000/api/v1/posts';
+//const usersAPI = 'http://localhost:3000/api/v1/users';
 
 class App extends Component {
-
-  //make fetch requests work, and cooperate with allPlaces.  Then get images to render on map.
-  //then start Redux Auth.
-  // also backend is having an error.
 
   componentDidMount() {
     fetch(postsAPI).then(response  => response.json())

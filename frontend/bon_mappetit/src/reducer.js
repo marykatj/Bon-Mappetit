@@ -23,19 +23,11 @@ export default function reducer(state = initialState, action) {
       return {...state, currentPage: action.currentPage}
 
     case SHARE:
-      // const railsImage = action.newPost.image_url
-      // console.log('railsImage' ,railsImage);
-      // const midImage = railsImage.replace("/rails/active_storage/blobs/", "chrome-extension://oahagehaecaffokbpkdmhdikdkjmimlg/");
-      // const reactImage = midImage.replace("?disposition=attachment", "");
-
-      // action.newPost.image_url = `${reactImage}`
-
-      // console.log(action.newPost)
-      // let userPostArray = state.allUserLocations
-      // userPostArray.push(action.newPost)
-      // let allPostsArray = state.allPlaces
-      // allPostsArray.push(action.newPost)
-      // return {...state, allUserLocations: userPostArray, allPlaces: allPostsArray}
+      let userPostArray = state.allUserLocations
+      userPostArray.push(action.newPost)
+      let allPostsArray = state.allPlaces
+      allPostsArray.push(action.newPost)
+      return {...state, allUserLocations: userPostArray, allPlaces: allPostsArray}
 
     case USER_SEARCH:
       return {...state, userSearch: action.term}
@@ -51,8 +43,6 @@ export default function reducer(state = initialState, action) {
       return {...state, address: action.address}
 
     case FETCH_ALL_DATA:
-      console.log("reducer")
-      console.log(action.allPosts)
       return {...state, allPlaces: action.allPosts, allUserLocations: action.allPosts}
 
     case FILTER_JUST_USER_POSTS:
