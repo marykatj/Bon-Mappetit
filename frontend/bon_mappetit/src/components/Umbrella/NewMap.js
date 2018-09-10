@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { connect } from 'react-redux';
 import MapsMarker from './MapsMarker'
+//import PhotoMarker from './PhotoMarker'
 import tempImage from '../../images/Coffee.jpg'
 import uuid  from 'uuid'
 import pin from '../../images/logo.png'
@@ -65,34 +66,26 @@ class NewMap extends Component {
     );
   }
 
+//need marker to consider lat & lng
 
 ///////////////////////////////////////////////////////////////////////////////
 
-  createAllMarkers = () => {
-    if (this.props.currentPage === 'profile') {
-      return this.props.allPlaces.map( place =>
-        <React.Fragment>
-          <MapsMarker src={pin} style={markerStyle} key={uuid()} place={place} lat={place.lat} lng={place.lng}/>
-          <img lat={place.lat} lng={place.lng} src={place.image_url} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
-          {this.state.clicked === true ? (<p style={tileStyle}> {place.address} </p>) : null }
-        </React.Fragment> )
-    } else {
-        return this.props.allPlaces.map( place => <MapsMarker src={pin} style={markerStyle} key={uuid()} place={place} lat={place.lat} lng={place.lng}/> )
-      }
+createAllMarkers = () => {
+  if (this.props.currentPage === 'profile') {
+    return this.props.allPlaces.map( place =>
+    <React.Fragment key={uuid()}>
+        <MapsMarker src={pin} style={markerStyle} place={place} lat={place.lat} lng={place.lng}/>
+        <img lat={place.lat} lng={place.lng} src={place.image_url} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
+        {this.state.clicked === true ? (<p style={tileStyle}> {place.address} </p>) : null }
+    </React.Fragment> )
+  } else {
+      return this.props.allPlaces.map( place => <MapsMarker src={pin} style={markerStyle} key={uuid()} place={place} lat={place.lat} lng={place.lng}/> )
+    }
   }
-
-  // imageRender = () => {
-  //   console.log("profile")
-  //   return(
-  //           <div>
-  //             <img src={tempImage} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
-  //             {this.state.clicked === true ? (<p style={tileStyle}> {this.props.place.address} </p>) : null }
-  //           </div>
-  //   )}
 
 }
 
-//this.props.place.image_url
+
 ///////////////////////////////////////////////////////////////////////////////
 
 function mapStateToProps(state) {
