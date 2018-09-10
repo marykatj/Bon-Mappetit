@@ -73,8 +73,8 @@ class NewMap extends Component {
       return this.props.allPlaces.map( place =>
         <React.Fragment>
           <MapsMarker src={pin} style={markerStyle} key={uuid()} place={place} lat={place.lat} lng={place.lng}/>
-          <img src={place.image_url} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
-          {this.state.clicked === true ? (<p style={tileStyle}> place.address </p>) : null }
+          <img lat={place.lat} lng={place.lng} src={place.image_url} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
+          {this.state.clicked === true ? (<p style={tileStyle}> {place.address} </p>) : null }
         </React.Fragment> )
     } else {
         return this.props.allPlaces.map( place => <MapsMarker src={pin} style={markerStyle} key={uuid()} place={place} lat={place.lat} lng={place.lng}/> )
