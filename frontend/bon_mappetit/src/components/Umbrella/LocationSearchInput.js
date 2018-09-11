@@ -14,7 +14,6 @@ state = {
     this.setState({ address });
   };
 
-//resetting the lat/lng incorrectly here!
   handleSelect = address => {
     this.props.createAddress(address)
     geocodeByAddress(address)

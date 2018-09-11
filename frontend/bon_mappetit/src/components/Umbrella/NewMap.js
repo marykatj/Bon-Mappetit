@@ -32,7 +32,7 @@ class NewMap extends Component {
       <div style={{ height: '100vh', width: '100%', float: 'left'}} id='map'>
         <GoogleMapReact id='map-container'
           bootstrapURLKeys={{ key: 'AIzaSyD8eyGeIVO1m-lMAwJ21o3qiUPRiuFV_ck' }}
-          center={[this.props.coord.lat, this.props.coord.lng]}
+          center={[this.props.addressCoord.lat, this.props.addressCoord.lng]}
           defaultZoom={14} >
           {this.createAllMarkers()}
         </GoogleMapReact>
@@ -56,9 +56,9 @@ createAllMarkers = () => {
 
 function mapStateToProps(state) {
   return {
-    coord: state.coord,
+    addressCoord: state.addressCoord,
     allUserLocations: state.allUserLocations,
-    allPlaces: state.allPlaces,
+    //allPlaces: state.allPlaces,
     currentPage: state.currentPage,
   }
 }

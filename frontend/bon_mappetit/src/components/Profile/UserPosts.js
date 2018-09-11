@@ -8,7 +8,6 @@ class UserPosts extends Component {
 ////////////////////////////////////////////////////////////////////////////////
 
 postMapper = () => {
-    console.log(this.props.searchedPosts)
   if (this.props.searchedPosts === undefined || this.props.searchedPosts.length === 0 ) {
      return this.props.allUserLocations.map(post => <Posts post={post} key={uuid()} />)
    } else {

@@ -27,9 +27,9 @@ class App extends Component {
 
 //Add logout button
 //Fix Nav NavLink
-//Fix Fetches.
+//Fix Fetches.                                   ---DONE
 //reverse chronilogical order.
-// delete Markers feature backend
+// delete Markers feature backend                ---DONE
 // search bar actually autocomplete
 //picture tiles
 // photo header

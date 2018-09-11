@@ -4,9 +4,9 @@ const initialState = {
   allUserLocations: [],
   //allPlaces: [],
 
-  currentBrowserLocation: {},
+  //currentBrowserLocation: {},
   coord: { lat: 40.7053, lng: -74.0140 },
-  addressCoord: { lat: 0, lng: 0 },
+  addressCoord: { lat: 0, lng: 0 }, //starting off at 0, then setting state.  need to have state start off correctly.
   address: '',
 
   //userSearch: '',
@@ -26,14 +26,13 @@ export default function reducer(state = initialState, action) {
     //let allPostsArray = {...state, allPlaces: state.allPlaces.push(action.newPost)}
 
     case USER_SEARCH:
-      // return {...state, userSearch: action.term}
-      console.log(state.searchedPosts)
       return {...state, searchedPosts: action.filteredPosts}
 
     case CREATE_ADDRESS:
       return {...state, address: action.address}
 
-    case COORD_CHANGE:
+    case COORD_CHANGE:   //coordinates enter here, and set the state.
+      console.log(action.coord)
       return {...state, addressCoord: action.coord}
 
     case FETCH_ALL_DATA:
