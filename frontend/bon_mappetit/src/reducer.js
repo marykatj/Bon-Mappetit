@@ -21,7 +21,7 @@ export default function reducer(state = initialState, action) {
       return {...state, currentPage: action.currentPage}
 
     case SHARE:
-    let update = {...state, allUserLocations: state.allUserLocations.push(action.newPost)}
+    let update = {...state, allUserLocations: state.allUserLocations.unshift(action.newPost)}
     //let allPostsArray = {...state, allPlaces: state.allPlaces.push(action.newPost)}
 
     case USER_SEARCH:
@@ -34,7 +34,7 @@ export default function reducer(state = initialState, action) {
       return {...state, coord: action.coord}
 
     case FETCH_ALL_DATA:
-      return {...state, allUserLocations: action.allPosts}  //allPlaces: action.allPosts,
+      return {...state, allUserLocations: action.allPosts.reverse()}  //allPlaces: action.allPosts,
 
     default: return state;
   }

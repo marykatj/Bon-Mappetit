@@ -8,7 +8,7 @@ import '../index.css'
 
 const linkStyle = {
     width: '200px',
-    padding: '12px 18px 12px 18px',
+    padding: '12px 18px 12px 20px',
     margin: '0 6px 6px',
     background: '#6433E9',
     textDecoration: 'none',
@@ -34,6 +34,7 @@ class NavBar extends Component {
       							<NavLink onClick={this.handleClick} activeClassName="active" to="/profile" style={linkStyle}> profile </NavLink>
       							<NavLink onClick={this.handleClick} activeClassName="active" to="/create" style={linkStyle}> create </NavLink>
                     <NavLink onClick={this.handleClick} activeClassName="active" to="/explore" style={linkStyle}> explore </NavLink>
+                    <NavLink to="/explore" style={linkStyle}> logout </NavLink>
       				</span>
               </p>
           </header>

@@ -25,7 +25,7 @@ class App extends Component {
 
 //////////////////////////////////////////////////////////////////////////////
 
-//Add logout button
+//Add logout button                              ---DONE
 //Fix Nav NavLink
 //Fix Fetches.                                   ---DONE
 //reverse chronilogical order.
