@@ -7,20 +7,11 @@ import LocationSearchInput from '../Umbrella/LocationSearchInput';
 
 class UserPage extends Component {
 
-  // filterUserPosts = () => {
-  //   const filteredPosts = this.props.allPlaces.filter(post => {return (post.user_id.includes())});  //Apply some logic that filters this.state.allPlaces to be this.state.allUserLocations based on user_id
-  //   this.userPostsAction(filteredPosts)
-  // }
-
-  filterUserPosts = () => {
-    console.log("hello there")
-  }
 
   render() {
     return (
         <div>
-        <h2 id="user-savor"> savor. </h2>
-        {this.filterUserPosts()}
+        <h1 id="user-savor"> savor. </h1>
           <UserInfo />
           <LocationSearchInput />
           <UserPosts />

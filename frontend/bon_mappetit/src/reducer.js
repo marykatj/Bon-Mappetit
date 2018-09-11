@@ -2,7 +2,7 @@ import { NAVIGATION_CLICK, SHARE, USER_SEARCH, FETCH_ALL_DATA, COORD_CHANGE, CRE
 
 const initialState = {
   allUserLocations: [],
-  //allPlaces: [],
+  allPlaces: [],
 
   //currentBrowserLocation: {},
   coord: { lat: 40.7053, lng: -74.0140 },  //eventually render browser location

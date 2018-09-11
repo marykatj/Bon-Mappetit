@@ -28,17 +28,15 @@ class App extends Component {
 //Add logout button                              ---DONE
 //Fix Nav NavLink
 //Fix Fetches.                                   ---DONE
-//reverse chronilogical order.
+//reverse chronilogical order.                   ---DONE
 // delete Markers feature backend                ---DONE
 // search bar actually autocomplete
+// active NavLink button colors
 //picture tiles
 // photo header
 // reseed & populate
 // Fake other user posts.  Define between allPlaces & allUserLocations between pages.
 
-//             <Route path='/logout' component={logout} />
-//              const logout = return < />
-//<NavBar {/*handleClick={this.handleClick}*/} />
 
 
   render() {
@@ -83,17 +81,17 @@ export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 
 // <App />
-//   <NavBar />                                         ---DONE
+//   <NavBar />
 //   <LoggedInUser />
-//   <NavBar />                                         ---DONE
-//   		Routes: Profile, Explore, Create, Logout        ---DONE
+//   <NavBar />
+//   		Routes: Profile, Explore, Create, Logout
 //
 //   <UserProfile />
 //             <UserInfo />
 //   	         <UserMap />
 //             <UserPosts />
-//                  <Post />                            ---DONE
-//            <UserSearch />                            ---DONE
+//                  <Post />
+//            <UserSearch />
 //
 //   <Create />
 //             <CreateMap />

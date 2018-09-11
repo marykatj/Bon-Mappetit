@@ -8,7 +8,7 @@ class CreatePage extends Component {
   render() {
       return (
           <div>
-          <h2 id='exploreHeader'> share. </h2>
+          <h1 id='exploreHeader'> share. </h1>
             <LocationSearchInput />
             <FormContainer />
             <CreateMap />

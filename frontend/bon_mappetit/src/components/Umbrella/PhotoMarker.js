@@ -1,12 +1,20 @@
+/*global google*/
 import React, { Component } from 'react'
+import GoogleMapReact from 'google-map-react';
 
 /////////////////////////////////////////////////////////////////////////////////
 
 const pictureStyle = {
   position: "absolute",
   width: "90px",
+  height: '60px',
   transform: "translate(-50%, -100%)",
-  borderRadius: '8px'
+  borderRadius: '8px',
+  // size: new google.maps.Size(71, 71),
+  //origin: new google.maps.Point(0, 0),
+  //anchor: new google.maps.Point(17, 34),
+  // scaledSize: new google.maps.Size(64, 64)
+
 }
 
 const tileStyle = {

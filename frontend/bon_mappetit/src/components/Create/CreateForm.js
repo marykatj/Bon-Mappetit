@@ -63,7 +63,7 @@ class CreateForm extends Component {
     );
   }
 
-//this.changePage &&
+//&& this.changePage &&
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 inputChange = (event) => {
@@ -81,18 +81,23 @@ photoChange = (event) => {
   })
 }
 
-changePage = (event) => {
-  this.props.changePage(event.target.href);
-}
+// changeToProfile = () => {
+//   this.props.changePage('/profile');
+// }
 
   handleSubmit = (event) => {
     event.preventDefault();
+    //event.stopPropagation();
     this.setPost();
     this.setState({
         description: '',
         image_url: '',
     })
+    //this.changeToProfile();
   }
+
+
+
 };
 
 ////////////////////////////////////////////////////////////////////////////////
