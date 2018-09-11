@@ -5,13 +5,6 @@ import tempImage from '../../images/Coffee.jpg'
 
 /////////////////////////////////////////////////////////////////////////////////
 
-const markerStyle = {
-  position: "absolute",
-  width: "15px",
-  height: "15px",
-  transform: "translate(-50%, -100%)",
-}
-
 const pictureStyle = {
   position: "absolute",
   width: "90px",
@@ -55,14 +48,11 @@ class PhotoMarker extends Component {
   render() {
     return (
               <div>
-                <img className='currentIcon' src={this.props.place.image_url} alt='' style={pictureStyle} />
+                <img className='currentIcon' src={this.props.place.image_url} alt='' style={pictureStyle} onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
+                {this.state.clicked === true ? (<p style={tileStyle}> {this.props.place.address} </p>) : null }
               </div>
     )}
   }
-
-
-  // <img src={this.props.place.image_url} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
-  // {this.state.clicked === true ? (<p style={tileStyle}> {this.props.place.address} </p>) : null }
 
 
 /////////////////////////////////////////////////////////////////////////////

@@ -1,7 +1,5 @@
-import React, { Component, Fragment } from 'react'
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
 import pin from '../../images/logo.png'
-import tempImage from '../../images/Coffee.jpg'
 
 /////////////////////////////////////////////////////////////////////////////////
 
