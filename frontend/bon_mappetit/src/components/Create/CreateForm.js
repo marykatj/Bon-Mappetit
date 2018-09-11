@@ -73,9 +73,9 @@ inputChange = (event) => {
 }
 
 photoChange = (event) => {
-  const parsedPath = document.getElementById('photo').files[0].name         //both these improve the file path.
+  // const parsedPath = document.getElementById('photo').files[0].name         //both these improve the file path.
   //const parsedPath = event.target.value.replace("C:\\fakepath\\", "");
-  const imagePath = `chrome-extension://oahagehaecaffokbpkdmhdikdkjmimlg/${parsedPath}`
+  // const imagePath = `chrome-extension://oahagehaecaffokbpkdmhdikdkjmimlg/${parsedPath}`
   this.setState({
     image_url: event.target.files[0]
   })

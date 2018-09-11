@@ -1,4 +1,4 @@
-import { NAVIGATION_CLICK, SHARE, USER_SEARCH, FETCH_ALL_DATA, FILTER_JUST_USER_POSTS, COORD_CHANGE, CREATE_ADDRESS, NEW_MARKER, FETCH_MARKERS, POST_SUBMIT, POST_UNSUBMIT } from './types'
+import { NAVIGATION_CLICK, SHARE, USER_SEARCH, FETCH_ALL_DATA, FILTER_JUST_USER_POSTS, COORD_CHANGE, CREATE_ADDRESS } from './types'
 
 const initialState = {
   allUserLocations: [],
@@ -7,9 +7,6 @@ const initialState = {
   currentBrowserLocation: {},
   coord: { lat: 40.7053, lng: -74.0140 },   //revise to make browser's current location
   address: '',
-
-  allMarkers: [],
-  userMarkers: [],
 
   userSearch: '',
 
@@ -48,9 +45,6 @@ export default function reducer(state = initialState, action) {
 
     case FETCH_ALL_DATA:
       return {...state, allPlaces: action.allPosts, allUserLocations: action.allPosts, allMarkers: action.allPosts, userMarkers: action.allPosts}
-
-    // case FETCH_MARKERS:
-    //   return {...state, allMarkers: action.allMarkers, userMarkers: action.allMarkers}
 
     case FILTER_JUST_USER_POSTS:
       return {...state, allUserLocations: action.userPosts};

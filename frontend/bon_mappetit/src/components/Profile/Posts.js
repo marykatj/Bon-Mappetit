@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import ImageLoader from 'react-image-file';
-import { connect } from 'react-redux';
-import coffee from '../../images/Coffee.jpg'
 
 class Posts extends Component {
 
@@ -31,12 +28,7 @@ class Posts extends Component {
 
 }
 
-function mapStateToProps(state) {
-  return {
-    address: state.address
-  }
-}
 
 ////////////////////////////////////////////////////////////////////////////
 
-export default connect(mapStateToProps)(Posts);
+export default Posts;
