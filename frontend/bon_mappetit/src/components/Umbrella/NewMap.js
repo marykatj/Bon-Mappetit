@@ -21,8 +21,6 @@ const pictureStyle = {
   borderRadius: '8px'
 }
 
-//const defaultCoord = { lat: 40.7053, lng: -74.0140 }   //revise to make browser's current location
-
 ////////////////////////////////////////////////////////////////////////////////
 
 class NewMap extends Component {
@@ -32,7 +30,7 @@ class NewMap extends Component {
       <div style={{ height: '100vh', width: '100%', float: 'left'}} id='map'>
         <GoogleMapReact id='map-container'
           bootstrapURLKeys={{ key: 'AIzaSyD8eyGeIVO1m-lMAwJ21o3qiUPRiuFV_ck' }}
-          center={[this.props.addressCoord.lat, this.props.addressCoord.lng]}
+          center={[this.props.coord.lat, this.props.coord.lng]}
           defaultZoom={14} >
           {this.createAllMarkers()}
         </GoogleMapReact>
@@ -56,7 +54,7 @@ createAllMarkers = () => {
 
 function mapStateToProps(state) {
   return {
-    addressCoord: state.addressCoord,
+    coord: state.coord,
     allUserLocations: state.allUserLocations,
     //allPlaces: state.allPlaces,
     currentPage: state.currentPage,

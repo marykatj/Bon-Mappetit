@@ -18,18 +18,7 @@ class CreateForm extends Component {
   state = {
     description: '',
     image_url: '',
-    lat: this.props.addressCoord.lat,
-    lng: this.props.addressCoord.lat,
   }
-
-  // handleSelect = address => {
-  //   this.props.createAddress(address)
-  //   geocodeByAddress(address)
-  //     .then(results => getLatLng(results[0]))
-  //     .then(latLng => this.setState({
-  //
-  //     }));
-  //};
 
   /////////////////////////////////////////////////////////////////////////////
 
@@ -39,8 +28,8 @@ class CreateForm extends Component {
     formData.append('address', this.props.address)
     formData.append('description', this.state.description)
     formData.append('image_file', this.state.image_url)
-    formData.append('lat', this.props.addressCoord.lat)
-    formData.append('lng', this.props.addressCoord.lng)
+    formData.append('lat', this.props.coord.lat)
+    formData.append('lng', this.props.coord.lng)
     formData.append('user_id', 1)
 
     const config = {
@@ -57,8 +46,6 @@ class CreateForm extends Component {
 ///////////////////////////////////////////////////////////////////////////////
 
   render() {
-    // console.log(this.props.addressCoord.lat)
-    // console.log(this.props.addressCoord.lng)
     return (
       <div >
         <form onSubmit={this.handleSubmit} >
@@ -116,8 +103,7 @@ function mapStateToProps(state) {
     //allPlaces: state.allPlaces,
     currentPage: state.currentPage,
     address: state.address,
-    addressCoord: state.addressCoord,
-    //coord: state.coord
+    coord: state.coord,
   }
 }
 
