@@ -4,8 +4,20 @@ import { userSearchAction } from '../../action'
 
 class UserSearch extends Component {
 
+  state = {
+    search: ''
+  }
+
 handleChange = (event) => {
-  this.props.userSearch(event.target.value)
+  this.setState({
+    search: event.target.value
+  })
+  this.filterPosts();
+}
+
+filterPosts = () => {
+  let filteredPosts = this.props.allUserLocations.filter(post => {return (post.address.toLowerCase().includes(this.state.search.toLowerCase()))})
+  this.props.userSearch(filteredPosts)
 }
 
     render() {
@@ -22,15 +34,15 @@ handleChange = (event) => {
 
 //////////////////////////////////////////////////////////////////////////////////
 
-function mapStateToProps(state) {             //totally needed????
+function mapStateToProps(state) {
   return {
-    userSearch: state.userSearch,
+    allUserLocations: state.allUserLocations
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    userSearch: (term) => dispatch(userSearchAction(term)),
+    userSearch: (filteredPosts) => dispatch(userSearchAction(filteredPosts)),
     dispatch
   }
 }

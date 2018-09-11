@@ -1,14 +1,16 @@
-import { NAVIGATION_CLICK, SHARE, USER_SEARCH, FETCH_ALL_DATA, FILTER_JUST_USER_POSTS, COORD_CHANGE, CREATE_ADDRESS } from './types'
+import { NAVIGATION_CLICK, SHARE, USER_SEARCH, FETCH_ALL_DATA, COORD_CHANGE, CREATE_ADDRESS } from './types'
 
 const initialState = {
   allUserLocations: [],
-  allPlaces: [],
+  //allPlaces: [],
 
   currentBrowserLocation: {},
-  coord: { lat: 40.7053, lng: -74.0140 },   //revise to make browser's current location
+  coord: { lat: 40.7053, lng: -74.0140 },
+  addressCoord: { lat: 0, lng: 0 },
   address: '',
 
-  userSearch: '',
+  //userSearch: '',
+  searchedPosts: [],
 
   currentPage: 'explore'
 }
@@ -20,34 +22,22 @@ export default function reducer(state = initialState, action) {
       return {...state, currentPage: action.currentPage}
 
     case SHARE:
-      let userPostArray = state.allUserLocations
-      userPostArray.push(action.newPost)
-      let allPostsArray = state.allPlaces
-      allPostsArray.push(action.newPost)
-      let allMarkersA = state.allMarkers
-      allMarkersA.push(action.newPost)
-      let userMarkersA = state.userMarkers
-      userMarkersA.push(action.newPost)
-      return {...state, allUserLocations: userPostArray, allPlaces: allPostsArray, userMarkers: allMarkersA, allMarkers: userMarkersA}
+    let update = {...state, allUserLocations: state.allUserLocations.push(action.newPost)}
+    //let allPostsArray = {...state, allPlaces: state.allPlaces.push(action.newPost)}
 
     case USER_SEARCH:
-      return {...state, userSearch: action.term}
-
-    case COORD_CHANGE:
-      let userMarkersArray = state.userMarkers
-      userMarkersArray.push(action.coord)
-      let allMarkersArray = state.allMarkers
-      allMarkersArray.push(action.coord)
-      return {...state, coord: action.coord, allMarkers: allMarkersArray, userMarkers: userMarkersArray}
+      // return {...state, userSearch: action.term}
+      console.log(state.searchedPosts)
+      return {...state, searchedPosts: action.filteredPosts}
 
     case CREATE_ADDRESS:
       return {...state, address: action.address}
 
-    case FETCH_ALL_DATA:
-      return {...state, allPlaces: action.allPosts, allUserLocations: action.allPosts, allMarkers: action.allPosts, userMarkers: action.allPosts}
+    case COORD_CHANGE:
+      return {...state, addressCoord: action.coord}
 
-    case FILTER_JUST_USER_POSTS:
-      return {...state, allUserLocations: action.userPosts};
+    case FETCH_ALL_DATA:
+      return {...state, allUserLocations: action.allPosts}  //allPlaces: action.allPosts,
 
     default: return state;
   }

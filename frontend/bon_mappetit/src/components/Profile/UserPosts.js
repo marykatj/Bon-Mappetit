@@ -8,13 +8,13 @@ class UserPosts extends Component {
 ////////////////////////////////////////////////////////////////////////////////
 
 postMapper = () => {
-  if (this.props.userSearch === '') {
+    console.log(this.props.searchedPosts)
+  if (this.props.searchedPosts === undefined || this.props.searchedPosts.length === 0 ) {
      return this.props.allUserLocations.map(post => <Posts post={post} key={uuid()} />)
-  } else {
-       const filteredPosts = this.props.allUserLocations.filter(post => {return (post.address.toLowerCase().includes(this.props.userSearch.toLowerCase()))})
-       return filteredPosts.map(post => <Posts post={post} key={uuid()} location={this.props.address}/>)
+   } else {
+     return this.props.searchedPosts.map(post => <Posts post={post} key={uuid()} />)
    }
-}
+ }
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -28,8 +28,11 @@ postMapper = () => {
 
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 function mapStateToProps(state) {
   return {
+    searchedPosts: state.searchedPosts,
     allUserLocations: state.allUserLocations,
     userSearch: state.userSearch
   }

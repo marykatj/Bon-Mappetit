@@ -18,8 +18,8 @@ export function createPostAction(post) {
   return { type: 'SHARE', newPost: post}
   }
 
-export function userSearchAction(term) {
-  return { type: 'USER_SEARCH', term: term}
+export function userSearchAction(filteredPosts) {
+  return { type: 'USER_SEARCH', filteredPosts: filteredPosts}
   }
 
 export function userCoordinatesAction(coord) {
@@ -33,11 +33,3 @@ export function createAddressAction(address) {
 export function fetchPostsAction(allPosts) {
   return { type: 'FETCH_ALL_DATA', allPosts: allPosts}
 }
-
-export function fetchMarkersAction(allMarkers) {
-  return { type: 'FETCH_MARKERS', allMarkers: allMarkers}
-}
-  //
-  //   export function userPostsAction(filteredPosts) {
-  //     return { type: 'FILTER_JUST_USER_POSTS', userPosts: filteredPosts}
-  //     }

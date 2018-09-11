@@ -21,10 +21,11 @@ const pictureStyle = {
   borderRadius: '8px'
 }
 
+//const defaultCoord = { lat: 40.7053, lng: -74.0140 }   //revise to make browser's current location
+
 ////////////////////////////////////////////////////////////////////////////////
 
 class NewMap extends Component {
-
 
   render() {
     return (
@@ -43,9 +44,9 @@ class NewMap extends Component {
 
 createAllMarkers = () => {
   if (this.props.currentPage === 'profile') {
-    return this.props.allPlaces.map( place => <PhotoMarker src={place.image_url} style={pictureStyle} key={uuid()} place={place} lat={place.lat} lng={place.lng}/> )
+    return this.props.allUserLocations.map( place => <PhotoMarker src={place.image_url} style={pictureStyle} key={uuid()} place={place} lat={place.lat} lng={place.lng}/> )
   } else {
-      return this.props.allPlaces.map( place => <MapsMarker src={pin} style={markerStyle} key={uuid()} place={place} lat={place.lat} lng={place.lng}/> )
+      return this.props.allUserLocations.map( place => <MapsMarker src={pin} style={markerStyle} key={uuid()} place={place} lat={place.lat} lng={place.lng}/> )
     }
   }
 

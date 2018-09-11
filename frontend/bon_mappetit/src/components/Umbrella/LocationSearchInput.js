@@ -14,6 +14,7 @@ state = {
     this.setState({ address });
   };
 
+//resetting the lat/lng incorrectly here!
   handleSelect = address => {
     this.props.createAddress(address)
     geocodeByAddress(address)
@@ -32,7 +33,7 @@ state = {
 
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
           <div>
-            <input 
+            <input
               {...getInputProps({
                 placeholder: 'find...',
                 className: 'location-search-input',

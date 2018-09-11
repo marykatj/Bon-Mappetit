@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createPostAction, changePageAction } from '../../action';
+import { createPostAction, changePageAction, fetchPostsAction } from '../../action';
 import { NavLink } from 'react-router-dom';
 import ExplorePage from '../Explore/ExplorePage';
 
@@ -17,8 +17,8 @@ class CreateForm extends Component {
   state = {
     description: '',
     image_url: '',
-    lat: this.props.coord.lat,
-    lng: this.props.coord.lng,
+    lat: this.props.addressCoord.lat,
+    lng: this.props.addressCoord.lng,
   }
 
   /////////////////////////////////////////////////////////////////////////////
@@ -56,7 +56,7 @@ class CreateForm extends Component {
           <input name="image" type="file" accept="image/*" id="photo" onChange={this.photoChange} className='upload-button'/>
           <p></p>
           <span>
-            <NavLink onClick={this.changePage && this.handleSubmit} className="submit-button" to="/profile" style={submitStyle}> share </NavLink>
+            <NavLink onClick={this.handleSubmit} className="submit-button" to="/profile" style={submitStyle}> share </NavLink>
           </span>
           </div>
         </form>
@@ -64,6 +64,7 @@ class CreateForm extends Component {
     );
   }
 
+//this.changePage &&
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 inputChange = (event) => {
@@ -82,7 +83,7 @@ photoChange = (event) => {
 }
 
 changePage = (event) => {
-  this.props.changePage(event.target.href)
+  this.props.changePage(event.target.href);
 }
 
   handleSubmit = (event) => {
@@ -105,6 +106,7 @@ function mapStateToProps(state) {
     allPlaces: state.allPlaces,
     currentPage: state.currentPage,
     address: state.address,
+    addressCoord: state.addressCoord,
     coord: state.coord
   }
 }

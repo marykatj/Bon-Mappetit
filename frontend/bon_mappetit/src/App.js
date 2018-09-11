@@ -25,6 +25,22 @@ class App extends Component {
 
 //////////////////////////////////////////////////////////////////////////////
 
+//Add logout button
+//Fix Nav NavLink
+//Fix Fetches.
+//reverse chronilogical order.
+// delete Markers feature backend
+// search bar actually autocomplete
+//picture tiles
+// photo header
+// reseed & populate
+// Fake other user posts.  Define between allPlaces & allUserLocations between pages.
+
+//             <Route path='/logout' component={logout} />
+//              const logout = return < />
+//<NavBar {/*handleClick={this.handleClick}*/} />
+
+
   render() {
     return (
       <div>
@@ -63,21 +79,6 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 
-////////////////////////////////////////////////////////////////////////////
-
-//             <Route path='/logout' component={logout} />
-//              const logout = return < />
-//<NavBar {/*handleClick={this.handleClick}*/} />
-//import UUID from 'uuid'
-
-// editAJAX = (event) => {
-//     event.preventDefault();
-//
-//     fetch(`http://localhost:3001/api/v1/post/${this.props.post.id}/edit`, {method:"PATCH"})
-//     .then(response=>response.json())
-//     .then(data=>this.props.updatePostAction(data))
-//   }
-
 //Structure///////////////////////////////////////////////////////////////////
 
 
@@ -101,24 +102,19 @@ export default connect(mapStateToProps, mapDispatchToProps)(App);
 //             <ExploreSearch />
 //   	         <ExploreMap />
 
-//TIDY UP:
 
-//searchbar: make full text appear upon selection
-// geolocation on map
-// clicke event on marker to render a tile component
-// Share Button NavLink
-// User profile avatar
+//Additional Features//////////////////////////////////////////////////////////
 
-// Rails Backend: issues with postgres installment.
-//   user: name, location, avatar
-//   post: place, image, desription, user_id
+// photo carousel
+// edit/delete posts
+// gelocation
+// Redux Auth
+// Upload profile avatar
+
+// editAJAX = (event) => {
+//     event.preventDefault();
 //
-//   Backend Routes & Serializer
-//   Active Storage
-//   Auth
-
-
-// Redux Auth & User Login/Create Account Page. photo upload for avatar.
-
-//Edit functionality for UserPosts
-//NavBar photo formatting & fake user posts
+//     fetch(`http://localhost:3001/api/v1/post/${this.props.post.id}/edit`, {method:"PATCH"})
+//     .then(response=>response.json())
+//     .then(data=>this.props.updatePostAction(data))
+//   }

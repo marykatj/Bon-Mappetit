@@ -9,28 +9,11 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-
 const store = createStore(reducer);
 //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
 ReactDOM.render(<Provider store={store}><Router><App store={store}/></Router></Provider>, document.getElementById('root'));
 registerServiceWorker();
-
-//////////////////////////////////////////////////////////////////////////////////
-
-// Rails backend written: need to connect with front end                    -- TODAY
-// Need user data to persist  --TODAY
-// Need Redux Auth implemented && User profile set up                       -- THUR/FRI
-// Map Markers: need to distinguish between User & All.  Mostly set up.     --THUR/FRI
-// css                                                                      --Sunday & Monday
-// FIX ADDRESSES & SEARCH BAR.
-//search bar actually autocompletes.
-// savor move.
-
-// user profile with avatar
-// geolocation
-// carosuel photos
-
 
 /////////////////////////////////////////////////////////////////////////////////
 
