@@ -55,19 +55,15 @@ class PhotoMarker extends Component {
   render() {
     return (
               <div>
-                  <img src={tempImage} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
-                  {this.state.clicked === true ? (<p style={tileStyle}> {this.props.place.address} </p>) : null }
+                <img className='currentIcon' src={this.props.place.image_url} alt='' style={pictureStyle} />
               </div>
     )}
   }
 
-  // <React.Fragment >
-  //     <img className='currentIcon' src={pin} alt='' style={markerStyle} />
-  //       <div>
-  //         <img src={tempImage} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
-  //         {this.state.clicked === true ? (<p style={tileStyle}> {this.props.place.address} </p>) : null }
-  //         </div>
-  // </React.Fragment>
+
+  // <img src={this.props.place.image_url} style={pictureStyle} alt="" onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
+  // {this.state.clicked === true ? (<p style={tileStyle}> {this.props.place.address} </p>) : null }
+
 
 /////////////////////////////////////////////////////////////////////////////
 
