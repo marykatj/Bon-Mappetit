@@ -1,7 +1,6 @@
 import { NAVIGATION_CLICK, SHARE, USER_SEARCH, FETCH_ALL_DATA, COORD_CHANGE, CREATE_ADDRESS } from './types'
 
 const initialState = {
-  allUserLocations: [],
   allPlaces: [],
 
   //currentBrowserLocation: {},
@@ -21,8 +20,7 @@ export default function reducer(state = initialState, action) {
       return {...state, currentPage: action.currentPage}
 
     case SHARE:
-    let update = {...state, allUserLocations: state.allUserLocations.unshift(action.newPost)}
-    //let allPostsArray = {...state, allPlaces: state.allPlaces.push(action.newPost)}
+      let allPlacesArray = {...state, allPlaces: state.allPlaces.unshift(action.newPost)}
 
     case USER_SEARCH:
       return {...state, searchedPosts: action.filteredPosts}
@@ -34,7 +32,7 @@ export default function reducer(state = initialState, action) {
       return {...state, coord: action.coord}
 
     case FETCH_ALL_DATA:
-      return {...state, allUserLocations: action.allPosts.reverse()}  //allPlaces: action.allPosts,
+    return {...state, allPlaces: action.allPosts.reverse()}  //allPlaces: action.allPosts,
 
     default: return state;
   }

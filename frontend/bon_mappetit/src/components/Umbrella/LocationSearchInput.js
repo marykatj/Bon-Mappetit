@@ -15,7 +15,8 @@ state = {
   };
 
   handleSelect = address => {
-    this.props.createAddress(address)
+    this.props.createAddress(address);
+    this.setState({ address });
     geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
       .then(latLng => this.props.userCoordinates(latLng));
@@ -36,6 +37,7 @@ state = {
               {...getInputProps({
                 placeholder: 'find...',
                 className: 'location-search-input',
+                options: { types: ['establishment'] },
               })}
             />
             <div className="autocomplete-dropdown-container">

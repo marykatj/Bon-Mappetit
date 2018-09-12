@@ -4,9 +4,9 @@ class Posts extends Component {
 
   render() {
     return (
-      <div>
+      <div id="card">
       <img className="card-image-left" src={this.props.post.image_url} alt=""/>
-          <div id="card">
+          <div>
 
             <div>
               <a>
@@ -15,8 +15,8 @@ class Posts extends Component {
             </div>
 
             <div className="card-body">
-              <h4 className="card-title"><strong>{this.props.post.address}</strong></h4>
-              <p className="card-text">{this.props.post.description}
+              <h3 className="card-title"><strong>{this.props.post.address}</strong></h3>
+              <p className="card-text"><h3>{this.props.post.description}</h3>
               </p>
             </div>
           </div>

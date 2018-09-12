@@ -16,7 +16,8 @@ handleChange = (event) => {
 }
 
 filterPosts = () => {
-  let filteredPosts = this.props.allUserLocations.filter(post => {return (post.address.toLowerCase().includes(this.state.search.toLowerCase()))})
+  let userLocations = this.props.allPlaces.filter(post => {return (post.id > 17)})
+  let filteredPosts = userLocations.filter(post => {return (post.address.toLowerCase().includes(this.state.search.toLowerCase()))})
   this.props.userSearch(filteredPosts)
 }
 
@@ -36,7 +37,7 @@ filterPosts = () => {
 
 function mapStateToProps(state) {
   return {
-    allUserLocations: state.allUserLocations
+    allPlaces: state.allPlaces
   }
 }
 

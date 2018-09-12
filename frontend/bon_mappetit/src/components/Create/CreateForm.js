@@ -50,7 +50,7 @@ class CreateForm extends Component {
     return (
       <div >
         <form onSubmit={this.handleSubmit} >
-          <label type="text" id="location" value={this.props.address} onChange={this.inputChange}> {this.props.address}</label>
+          <label type="text" id="location" value={this.props.address} onChange={this.inputChange}> {this.props.address}</label><p></p>
           <textarea id="description" value={this.state.description} onChange={this.inputChange} placeholder="thoughts..."/>
           <div className="button-row">
           <input name="image" type="file" accept="image/*" id="photo" onChange={this.photoChange} className='upload-button'/>

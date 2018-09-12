@@ -19,6 +19,20 @@ import uuid  from 'uuid'
 
 class NewMap extends Component {
 
+  // state = {
+  //   allUserLocations: [],
+  //   explorePlaces: []
+  // }
+  //
+  // filterMarkers = () => {
+  //   let exploreLocations = this.props.allPlaces.filter(post => {return (post.id < 14)})
+  //   let userLocations = this.props.allPlaces.filter(post => {return (post.id > 13)})
+  //   this.setState({
+  //     explorePlaces: exploreLocations,
+  //     allUserLocations: userLocations
+  //   })
+  // }
+
   render() {
     return (
       <div style={{ height: '100vh', width: '100%', float: 'left'}} id='map'>
@@ -36,13 +50,15 @@ class NewMap extends Component {
 ///////////////////////////////////////////////////////////////////////////////
 
 createAllMarkers = () => {
+  let exploreLocations = this.props.allPlaces.filter(post => {return (post.id < 18)})
+  let userLocations = this.props.allPlaces.filter(post => {return (post.id > 17)})
 
   if (this.props.currentPage === 'profile') {
-    return this.props.allUserLocations.map( place => <PhotoMarker key={uuid()} place={place} lat={place.lat} lng={place.lng} /> )
+    return userLocations.map( place => <PhotoMarker key={uuid()} place={place} lat={place.lat} lng={place.lng} /> )
     } else if (this.props.currentPage === 'explore') {
-      return this.props.allPlaces.map( place => <PhotoMarker key={uuid()} place={place} lat={place.lat} lng={place.lng}/> )
+      return exploreLocations.map( place => <PhotoMarker key={uuid()} place={place} lat={place.lat} lng={place.lng}/> )
   } else {
-      return this.props.allUserLocations.map( place => <MapsMarker key={uuid()} place={place} lat={place.lat} lng={place.lng}/> )
+      return userLocations.map( place => <MapsMarker key={uuid()} place={place} lat={place.lat} lng={place.lng}/> )
     }
   }
 
@@ -53,7 +69,6 @@ createAllMarkers = () => {
 function mapStateToProps(state) {
   return {
     coord: state.coord,
-    allUserLocations: state.allUserLocations,
     allPlaces: state.allPlaces,
     currentPage: state.currentPage,
   }
