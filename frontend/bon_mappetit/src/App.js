@@ -26,6 +26,7 @@ class App extends Component {
 //////////////////////////////////////////////////////////////////////////////
 
 //Add logout button                              ---DONE
+// giftcard during lunch.
 //Fix Nav NavLink
 //Fix Fetches.                                   ---DONE
 //reverse chronilogical order.                   ---DONE
@@ -33,7 +34,7 @@ class App extends Component {
 // search bar actually autocomplete
 // active NavLink button colors
 //picture tiles
-// photo header
+// photo header                                  ---MOSTLY DONE, NEED B&W
 // reseed & populate
 // Fake other user posts.  Define between allPlaces & allUserLocations between pages.
 

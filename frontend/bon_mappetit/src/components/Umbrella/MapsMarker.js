@@ -7,7 +7,7 @@ const markerStyle = {
   position: "absolute",
   width: "15px",
   height: "15px",
-  transform: "translate(-50%, -100%)",
+  transform: "translate(-50%, -100%)"
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -15,13 +15,13 @@ const markerStyle = {
 class MapsMarker extends Component {
 
   render() {
+
     return (
       <div>
           <img className='currentIcon' src={pin} alt='' style={markerStyle} />
       </div>
     )}
-  }
-
+  }   
 
 /////////////////////////////////////////////////////////////////////////////
 

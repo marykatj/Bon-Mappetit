@@ -2,11 +2,13 @@
   text-align: center;
   background-image: url('./images/Coffee.jpg');
   background-repeat: no-repeat;
-  height: 350px;
+  height: 600px;
+  background-size: 1300px 600px;
 }
 
 .App-title {
   padding-top: 20px;
+  padding-right: 500px;
   color: #6433E9;
   font-size: 3.0em;
 }
@@ -14,13 +16,13 @@
 .App-slogan {
   font-size: 1.5em;
   color: #6433E9;
-  padding-top: 20px;
+  padding-top: 350px;
+  padding-left: 600px;
 }
 
 .Header-image {
   background-image: url("./images/Coffee.jpg");
   background-position: center;
-  background-size: cover;
   transform: rotate(90deg);
 }
 
@@ -58,7 +60,7 @@
 #userPostsContainer {
   float: right;
   width: 50%;
-  height: 636px;
+  height: 725px;
   background-color: #666699;
   text-align: center;
   overflow-y: scroll;
@@ -119,7 +121,7 @@
   background-color: #666699;
   text-align: center;
   padding-top: 100px;
-  height: 535px;
+  height: 627px;
 }
 
 #postForm {

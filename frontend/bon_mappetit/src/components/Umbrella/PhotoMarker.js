@@ -8,23 +8,21 @@ const pictureStyle = {
   position: "absolute",
   width: "90px",
   height: '60px',
+  // minWidth: '15px',
+  // minHeight: '5px',
+  // maxWidth: '300px',
+  // maxHeight: '200px',
   transform: "translate(-50%, -100%)",
   borderRadius: '8px',
-  // size: new google.maps.Size(71, 71),
-  //origin: new google.maps.Point(0, 0),
-  //anchor: new google.maps.Point(17, 34),
-  // scaledSize: new google.maps.Size(64, 64)
-
 }
 
 const tileStyle = {
-  margin: '5px',
   border: '5px solid #ccc',
   width: '70px',
   height: '20px',
   background: '#D3D3D3',
-  padding: '15px',
-  boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+  padding: '10px 5px 20px 5px',
+  //fontFamily: 'Fantasy',
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -54,7 +52,7 @@ class PhotoMarker extends Component {
     return (
               <div>
                 <img className='currentIcon' src={this.props.place.image_url} alt='' style={pictureStyle} onClick={this.state.clicked === true ? this.unClick : this.markerClick}/>
-                {this.state.clicked === true ? (<p style={tileStyle}> {this.props.place.address} </p>) : null }
+                {this.state.clicked === true ? (<h5 style={tileStyle}> {this.props.place.address} </h5>) : null }
               </div>
     )}
   }

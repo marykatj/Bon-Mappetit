@@ -5,30 +5,12 @@ import { connect } from 'react-redux';
 import MapsMarker from './MapsMarker'
 import PhotoMarker from './PhotoMarker'
 import uuid  from 'uuid'
-import pin from '../../images/logo.png'
 
-const markerStyle = {
-  position: "absolute",
-  width: "5%",
-  height: "5%",
-  // width: "15px",
-  // height: "15px",
-  transform: "translate(-50%, -100%)",
-  zIndex: '1000',
-}
-
-const pictureStyle = {
-  position: "absolute",
-  width: "90px",
-  height: '60px',
-  transform: "translate(-50%, -100%)",
-  borderRadius: '8px',
+  //  const markerIcon = new google.maps.Marker({ icon: pin, scaledSize: new google.maps.Size(64, 64), size: new google.maps.Size(48, 48), optimized: false })
   // size: new google.maps.Size(71, 71),
   //origin: new google.maps.Point(0, 0),
   //anchor: new google.maps.Point(17, 34),
   // scaledSize: new google.maps.Size(64, 64)
-}
-
 
   const mapStyleArray = [{"featureType": "landscape.natural", "elementType": "geometry.fill", "stylers": [{"visibility": "on"}, {"color": "#e0efef"}]}, {"featureType": "poi", "elementType": "geometry.fill", "stylers": [{"visibility": "on"},
   {"hue": "#1900ff"}, {"color": "#c0e8e8"}]}, {"featureType": "road", "elementType": "geometry", "stylers": [{"lightness": 100}, {"visibility": "simplified"}]}, {"featureType": "road", "elementType": "labels", "stylers": [{"visibility": "off"}]}, {"featureType": "transit.line","elementType": "geometry", "stylers": [{"visibility": "on"}, {"lightness": 700}]}, {"featureType": "water", "elementType": "all", "stylers": [{"color": "#7dcdcd"}]}]
@@ -54,12 +36,13 @@ class NewMap extends Component {
 ///////////////////////////////////////////////////////////////////////////////
 
 createAllMarkers = () => {
+
   if (this.props.currentPage === 'profile') {
-    return this.props.allUserLocations.map( place => <PhotoMarker src={place.image_url} style={pictureStyle} key={uuid()} place={place} lat={place.lat} lng={place.lng}/> )
-  } else if (this.props.currentPage === 'explore') {
-    return this.props.allPlaces.map( place => <PhotoMarker src={place.image_url} style={pictureStyle} key={uuid()} place={place} lat={place.lat} lng={place.lng}/> )
+    return this.props.allUserLocations.map( place => <PhotoMarker key={uuid()} place={place} lat={place.lat} lng={place.lng} /> )
+    } else if (this.props.currentPage === 'explore') {
+      return this.props.allPlaces.map( place => <PhotoMarker key={uuid()} place={place} lat={place.lat} lng={place.lng}/> )
   } else {
-      return this.props.allUserLocations.map( place => <MapsMarker src={pin} style={markerStyle} key={uuid()} place={place} lat={place.lat} lng={place.lng}/> )
+      return this.props.allUserLocations.map( place => <MapsMarker key={uuid()} place={place} lat={place.lat} lng={place.lng}/> )
     }
   }
 

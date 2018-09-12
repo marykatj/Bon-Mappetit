@@ -11,6 +11,7 @@ const submitStyle = {
     background: '#6433E9',
     color: 'white',
     borderRadius: '4px',
+    textDecoration: 'none',
 }
 
 class CreateForm extends Component {
