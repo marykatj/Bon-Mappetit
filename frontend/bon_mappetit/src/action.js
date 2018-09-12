@@ -30,6 +30,14 @@ export function createAddressAction(address) {
   return { type: 'CREATE_ADDRESS', address: address }
 }
 
+export function addressAlertAction(boolean) {
+  return { type: 'ADDRESS_TRUE', gotAddress: boolean }
+}
+
+export function addressNoAlertAction(boolean) {
+  return { type: 'ADDRESS_FALSE', gotAddress: boolean }
+}
+
 export function fetchPostsAction(allPosts) {
   return { type: 'FETCH_ALL_DATA', allPosts: allPosts}
 }

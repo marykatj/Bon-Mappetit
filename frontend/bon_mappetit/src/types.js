@@ -4,3 +4,5 @@ export const USER_SEARCH = 'USER_SEARCH';
 export const FETCH_ALL_DATA = 'FETCH_ALL_DATA';
 export const COORD_CHANGE = 'COORD_CHANGE';
 export const CREATE_ADDRESS = 'CREATE_ADDRESS';
+export const ADDRESS_TRUE = 'ADDRESS_TRUE';
+export const ADDRESS_FALSE = 'ADDRESS_FALSE';

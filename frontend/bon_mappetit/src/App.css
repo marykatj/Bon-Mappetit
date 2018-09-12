@@ -2,12 +2,12 @@
   text-align: center;
   background-image: url('./images/Coffee.jpg');
   background-repeat: no-repeat;
-  height: 100%;
-  background-size: 100% 100%;
+  height: 775px;
+  background-size: 100% 775px;
 }
 
 .App-title {
-  padding-top: 20px;
+  padding-top: 2%;
   padding-right: 40%;
   color: #6433E9;
   font-size: 3.0em;
@@ -16,7 +16,7 @@
 .App-slogan {
   font-size: 1.5em;
   color: #6433E9;
-  padding-top: 18%;
+  padding-top: 23%;
   padding-left: 60%;
 }
 
@@ -26,12 +26,6 @@
   transform: rotate(90deg);
 }
 
-/*//////////////////////////////////////////////////////////////////////////*/
-
-.active {
-    background-color: #4CAF50;
-    color: white;
-}
 
 /*////SCROLL BAR///////////////////////////////////////////////////////////////////////*/
 

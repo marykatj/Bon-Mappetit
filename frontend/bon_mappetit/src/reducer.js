@@ -1,7 +1,8 @@
-import { NAVIGATION_CLICK, SHARE, USER_SEARCH, FETCH_ALL_DATA, COORD_CHANGE, CREATE_ADDRESS } from './types'
+import { NAVIGATION_CLICK, SHARE, USER_SEARCH, FETCH_ALL_DATA, COORD_CHANGE, CREATE_ADDRESS, ADDRESS_TRUE, ADDRESS_FALSE } from './types'
 
 const initialState = {
   allPlaces: [],
+  gotAddress: false,
 
   //currentBrowserLocation: {},
   coord: { lat: 40.7053, lng: -74.0140 },  //eventually render browser location
@@ -31,8 +32,14 @@ export default function reducer(state = initialState, action) {
     case COORD_CHANGE:
       return {...state, coord: action.coord}
 
+    case ADDRESS_TRUE:
+      return {...state, gotAddress: true}
+
+    case ADDRESS_FALSE:
+      return {...state, gotAddress: false}  
+
     case FETCH_ALL_DATA:
-    return {...state, allPlaces: action.allPosts.reverse()}  //allPlaces: action.allPosts,
+      return {...state, allPlaces: action.allPosts.reverse()}  //allPlaces: action.allPosts,
 
     default: return state;
   }

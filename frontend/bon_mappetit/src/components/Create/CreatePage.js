@@ -10,7 +10,7 @@ class CreatePage extends Component {
           <div>
           <h1 id='exploreHeader'> share. </h1>
             <LocationSearchInput />
-            <FormContainer />
+            <FormContainer history={this.props.history} />
             <CreateMap />
           </div>
       );

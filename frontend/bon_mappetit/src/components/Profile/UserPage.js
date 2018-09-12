@@ -3,10 +3,9 @@ import UserInfo from './UserInfo';
 import UserPosts from './UserPosts';
 import UserMap from './UserMap';
 import LocationSearchInput from '../Umbrella/LocationSearchInput';
-
+import { withRouter } from 'react-router-dom';
 
 class UserPage extends Component {
-
 
   render() {
     return (

@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "connected-react-router": "^4.4.1",
     "google-maps-react": "^2.0.2",
+    "history": "^4.7.2",
     "react": "^16.4.2",
     "react-autosuggest": "^9.4.0",
     "react-avatar-editor": "^11.0.4",
@@ -13,6 +15,7 @@
     "react-scripts": "1.1.5",
     "react-tag-autocomplete": "^5.6.0",
     "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
     "snazzy-info-window": "^1.1.1"
   },
   "scripts": {

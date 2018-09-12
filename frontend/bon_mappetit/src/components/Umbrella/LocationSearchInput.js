@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 import { connect } from 'react-redux';
-import { userCoordinatesAction, createAddressAction } from '../../action'
+import { userCoordinatesAction, createAddressAction, addressAlertAction } from '../../action'
 
 
 class LocationSearchInput extends Component {
 
 state = {
-      address: ''
+      address: '',
   }
 
   handleChange = (address) => {
@@ -17,6 +17,7 @@ state = {
   handleSelect = address => {
     this.props.createAddress(address);
     this.setState({ address });
+    this.props.addressAlert(true)
     geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
       .then(latLng => this.props.userCoordinates(latLng));
@@ -82,6 +83,7 @@ function mapDispatchToProps(dispatch) {
   return {
     userCoordinates: (coord) => dispatch(userCoordinatesAction(coord)),
     createAddress: (address) => dispatch(createAddressAction(address)),
+    addressAlert: (boolean) => dispatch(addressAlertAction(boolean)),
     dispatch
   }
 }

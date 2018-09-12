@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 import { connect } from 'react-redux';
-import { createPostAction, changePageAction, fetchPostsAction } from '../../action';
-import { NavLink } from 'react-router-dom';
+import { createPostAction, changePageAction, fetchPostsAction, addressNoAlertAction } from '../../action';
+import { withRouter, NavLink } from 'react-router-dom';
 import ExplorePage from '../Explore/ExplorePage';
+import { push } from 'react-router-redux';
 
 const submitStyle = {
     width: '80%',
@@ -19,7 +20,9 @@ class CreateForm extends Component {
   state = {
     description: '',
     image_url: '',
+    rerender: false
   }
+
 
   /////////////////////////////////////////////////////////////////////////////
 
@@ -50,13 +53,13 @@ class CreateForm extends Component {
     return (
       <div >
         <form onSubmit={this.handleSubmit} >
-          <label type="text" id="location" value={this.props.address} onChange={this.inputChange}> {this.props.address}</label><p></p>
+          <label type="text" id="location" value={this.props.address} onChange={this.inputChange}> {this.props.gotAddress === true ? this.props.address : null}</label><p></p>
           <textarea id="description" value={this.state.description} onChange={this.inputChange} placeholder="thoughts..."/>
           <div className="button-row">
           <input name="image" type="file" accept="image/*" id="photo" onChange={this.photoChange} className='upload-button'/>
           <p></p>
           <span>
-            <NavLink onClick={this.handleSubmit} className="submit-button" to="/profile" style={submitStyle}> share </NavLink>
+            <button onClick={this.handleSubmit} className="submit-button" style={submitStyle}> share </button>
           </span>
           </div>
         </form>
@@ -64,6 +67,7 @@ class CreateForm extends Component {
     );
   }
 
+//<NavLink onClick={this.handleSubmit} className="submit-button" to="/profile" style={submitStyle}> share </NavLink>
 //&& this.changePage &&
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -94,7 +98,9 @@ photoChange = (event) => {
         description: '',
         image_url: '',
     })
-    //this.changeToProfile();
+    this.props.addressNoAlert(false)
+    this.props.history.push('/profile')
+    // this.changeToProfile();
   }
 
 
@@ -110,6 +116,7 @@ function mapStateToProps(state) {
     currentPage: state.currentPage,
     address: state.address,
     coord: state.coord,
+    gotAddress: state.gotAddress
   }
 }
 
@@ -117,6 +124,7 @@ function mapDispatchToProps(dispatch) {
   return {
     createPost: (post) => dispatch(createPostAction(post)),
     changePage: (page) => dispatch(changePageAction(page)),
+    addressNoAlert: (boolean) => dispatch(addressNoAlertAction(boolean)),
     dispatch
   }
 }

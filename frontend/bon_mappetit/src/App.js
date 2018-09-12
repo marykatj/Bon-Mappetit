@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchPostsAction } from './action'
 
@@ -25,39 +25,19 @@ class App extends Component {
 
 //////////////////////////////////////////////////////////////////////////////
 
-//Add logout button                              ---DONE
-// giftcard during lunch.
-//Fix Nav NavLink
-//Fix Fetches.                                   ---DONE
-//reverse chronilogical order.                   ---DONE
-// delete Markers feature backend                ---DONE
-// search bar actually autocomplete
-// active NavLink button colors
-//picture tiles
-// photo header                                  ---MOSTLY DONE, NEED B&W
-// reseed & populate
-// Fake other user posts.  Define between allPlaces & allUserLocations between pages.
-
-
-
   render() {
     return (
       <div>
         <NavBar />
-        <Switch>
-          <Route path='/explore' component={ ExplorePage } />
-          <Route path='/profile' render={ (props) => (
-            <UserPage {...props}/>
-          )} />
-          <Route path='/create' render={ (props) => (
-            <CreatePage {...props}/>
-          )} />
-        </Switch>
+        <Route path='/profile' component={UserPage}/>
+        <Route path='/explore' component={ExplorePage} />
+        <Route path="/create" component={CreatePage} />
       </div>
     );
   }
 }
 
+//<Route path='/explore' component={ ExplorePage } />
 ////////////////////////////////////////////////////////////////////////////////
 
 function mapStateToProps(state) {
@@ -75,7 +55,7 @@ function mapDispatchToProps(dispatch) {
 
 ////////////////////////////////////////////////////////////////////////////
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
 
 
 //Structure///////////////////////////////////////////////////////////////////
@@ -104,7 +84,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 //Additional Features//////////////////////////////////////////////////////////
 
-// photo carousel
 // edit/delete posts
 // gelocation
 // Redux Auth

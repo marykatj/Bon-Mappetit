@@ -1,19 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-
-import reducer from './reducer';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import { Provider } from 'react-redux';
+import { Router } from 'react-router-dom';
+import configureStore from './configureStore.js';
+import { createBrowserHistory } from 'history';
 
-const store = createStore(reducer);
-//window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const history = createBrowserHistory();
+const store = configureStore();
 
-ReactDOM.render(<Provider store={store}><Router><App store={store}/></Router></Provider>, document.getElementById('root'));
+ReactDOM.render(
+  <Router history={history}>
+    <Provider store={store}>
+        <App history={history}/>
+    </Provider>
+  </Router>, document.getElementById('root'));
 registerServiceWorker();
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import { BrowserRouter as Router } from 'react-router-dom';
+// import { Provider } from 'react-redux';
+// // import { createStore } from 'redux';
+// import { createBrowserHistory } from 'history';
+// import { applyMiddleware, compose, createStore } from 'redux';
+// import { connectRouter, routerMiddleware } from 'connected-react-router';
+// import thunk from 'redux-thunk';
+// import reducer from './reducer';
+// import './index.css';
+// import App from './App';
+// import registerServiceWorker from './registerServiceWorker';
+//
+//
+// const store = configureStore()
+// //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+//
+// ReactDOM.render(<Router><Provider store={store}><App history={history}/></Provider></Router>, document.getElementById('root'));
+// registerServiceWorker();
 
 /////////////////////////////////////////////////////////////////////////////////
 
