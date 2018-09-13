@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 import { connect } from 'react-redux';
-import { createPostAction, changePageAction, fetchPostsAction, addressNoAlertAction } from '../../action';
-import { withRouter, NavLink } from 'react-router-dom';
-import ExplorePage from '../Explore/ExplorePage';
-import { push } from 'react-router-redux';
+import { createPostAction, addressNoAlertAction, changePageAction } from '../../action';
 
 const submitStyle = {
     width: '80%',
@@ -43,7 +39,7 @@ class CreateForm extends Component {
 
   fetch('http://localhost:3000/api/v1/posts/', config)
     .then(response => response.json())
-    .then(data => {this.props.createPost(data)})
+    .then(data => {this.props.createPost(data)});
 
 }
 
@@ -67,8 +63,7 @@ class CreateForm extends Component {
     );
   }
 
-//<NavLink onClick={this.handleSubmit} className="submit-button" to="/profile" style={submitStyle}> share </NavLink>
-//&& this.changePage &&
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 inputChange = (event) => {
@@ -86,21 +81,17 @@ photoChange = (event) => {
   })
 }
 
-// changeToProfile = () => {
-//   this.props.changePage('/profile');
-// }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    //event.stopPropagation();
+    this.props.changePage('/profile');
     this.setPost();
     this.setState({
         description: '',
         image_url: '',
     })
-    this.props.addressNoAlert(false)
-    this.props.history.push('/profile')
-    // this.changeToProfile();
+    this.props.addressNoAlert(false);
+    this.props.history.push('/profile');
   }
 
 
@@ -111,8 +102,6 @@ photoChange = (event) => {
 
 function mapStateToProps(state) {
   return {
-    allUserLocations: state.allUserLocations,
-    //allPlaces: state.allPlaces,
     currentPage: state.currentPage,
     address: state.address,
     coord: state.coord,
@@ -123,8 +112,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     createPost: (post) => dispatch(createPostAction(post)),
-    changePage: (page) => dispatch(changePageAction(page)),
     addressNoAlert: (boolean) => dispatch(addressNoAlertAction(boolean)),
+    changePage: (page) => dispatch(changePageAction(page)),
     dispatch
   }
 }

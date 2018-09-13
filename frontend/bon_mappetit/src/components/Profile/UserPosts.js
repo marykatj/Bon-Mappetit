@@ -8,7 +8,7 @@ class UserPosts extends Component {
 ////////////////////////////////////////////////////////////////////////////////
 
 postMapper = () => {
-  let userLocations = this.props.allPlaces.filter(post => {return (post.id > 17)})
+  let userLocations = this.props.allPlaces.filter(post => {return (post.id > 19)})
   if (this.props.searchedPosts === undefined || this.props.searchedPosts.length === 0 ) {
      return userLocations.map(post => <Posts post={post} key={uuid()} />)
    } else {

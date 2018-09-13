@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchPostsAction } from './action'
 
@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <div>
         <NavBar />
-        <Route path='/profile' component={UserPage}/>
+        <Route exact path='/profile' component={UserPage}/>
         <Route path='/explore' component={ExplorePage} />
         <Route path="/create" component={CreatePage} />
       </div>
@@ -37,7 +37,6 @@ class App extends Component {
   }
 }
 
-//<Route path='/explore' component={ ExplorePage } />
 ////////////////////////////////////////////////////////////////////////////////
 
 function mapStateToProps(state) {
@@ -88,6 +87,8 @@ export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
 // gelocation
 // Redux Auth
 // Upload profile avatar
+// reformat tiles, with zIndex
+// reformat markers to scale
 
 // editAJAX = (event) => {
 //     event.preventDefault();

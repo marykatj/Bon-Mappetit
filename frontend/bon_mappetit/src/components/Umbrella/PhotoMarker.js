@@ -1,6 +1,4 @@
-/*global google*/
 import React, { Component } from 'react'
-import GoogleMapReact from 'google-map-react';
 
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -19,9 +17,10 @@ const pictureStyle = {
 const tileStyle = {
   border: '5px solid #ccc',
   width: '70px',
-  height: '20px',
+  height: '30px',
   background: '#D3D3D3',
   padding: '10px 5px 20px 5px',
+  zIndex: '1000',
   //fontFamily: 'Fantasy',
 }
 
